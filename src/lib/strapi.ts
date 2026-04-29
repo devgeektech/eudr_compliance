@@ -21,6 +21,29 @@ async function fetchAPI<T>(endpoint: string): Promise<T> {
     return {} as T;
   }
 }
+
+
+async function postAPI<T>(
+  endpoint: string,
+  body: unknown
+): Promise<T> {
+  try {
+    const res = await fetch(`${STRAPI_URL}/api${endpoint}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (!res.ok) throw new Error(`API Error: ${res.status}`);
+
+    return await res.json();
+  } catch (error) {
+    console.error("POST API Error:", error);
+    throw error;
+  }
+}
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 export type StrapiMedia = {
@@ -226,4 +249,19 @@ export async function getWhyChooseUsCards(): Promise<WhyChooseUsCardItem[]> {
   );
 
   return res?.data ?? [];
+}
+
+
+//POST APIS
+
+export function submitContactForm(data: {
+  fullName: string;
+  email: string;
+  company: string;
+  subject: string;
+  message: string;
+}) {
+  return postAPI("/contact-submissions", {
+    data,
+  });
 }

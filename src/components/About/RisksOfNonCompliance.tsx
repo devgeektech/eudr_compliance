@@ -5,11 +5,12 @@ import { risksOfNonCompliance } from "@/src/constants";
 
 const RisksOfNonCompliance = () => {
   return (
-    <section className="w-full bg-[rgba(0,107,44,0.08)] py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative w-full bg-[#1A1A1C] py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+         <div className="absolute inset-0 bg-[#006B2C0A] pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto">
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-[#1A1A1C] text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
+         <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
             Risks of Non-Compliance
           </h2>
 
@@ -53,6 +54,7 @@ const RisksOfNonCompliance = () => {
           })}
         </div>
       </div>
+    
     </section>
   );
 };

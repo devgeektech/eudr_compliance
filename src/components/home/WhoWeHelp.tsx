@@ -21,7 +21,7 @@ const WhoWeHelp = () => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1600px] mx-auto px-6 lg:px-[240px] text-white">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-[140px] xl:px-[240px] text-white">
         {/* Title */}
         <h2 className="text-3xl md:text-5xl font-bold text-center">
           Who We Help
@@ -33,7 +33,7 @@ const WhoWeHelp = () => {
         </p>
 
         {/* Cards */}
-        <div className="mt-14 flex  justify-center gap-6">
+     <div className="mt-14 flex flex-col lg:flex-row lg:flex-nowrap lg:justify-center gap-6 items-center">
           {whoWeHelpCards.map((item) => {
             const Logo = item.logo;
 
@@ -43,9 +43,9 @@ const WhoWeHelp = () => {
                 className="w-[215px] h-[200px] bg-white rounded-2xl flex flex-col items-center justify-center text-center p-6 shadow-md"
               >
                 {/* Logo */}
-               <div className="mb-4 flex items-center justify-center overflow-hidden">
-  <Logo className="w-full h-full text-[#BF9655] hover:text-white transition" />
-</div>
+                <div className="mb-4 flex items-center justify-center overflow-hidden">
+                  <Logo className="w-full h-full text-[#BF9655] transition" />
+                </div>
 
                 {/* Title */}
                 <p className="text-[#1E1E20] font-medium text-base">

@@ -8,8 +8,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#131315] text-white pt-16 pb-8 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
+   <footer className="w-full bg-[#131315] text-white pt-14 sm:pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+     <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Left Side */}
         <div className="lg:col-span-1">
           <div className="mb-5">

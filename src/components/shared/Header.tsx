@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   EUDR_LOGO,
   HeaderRightFlag1,
@@ -17,65 +18,94 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // close mobile menu on desktop resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // prevent body scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="w-full bg-[#1E1E20] text-white relative z-50">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px]">
-        <div className="flex items-center justify-between h-[90px] lg:h-[120px]">
-          {/* Left Logo */}
+    <header className="w-full bg-[#1E1E20] text-white sticky top-0 z-50">
+      <div className="max-w-[1440px] py-5 sm:py-5 md:py-2 mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
+        <div className="h-[78px] sm:h-[85px] lg:h-[100px] flex items-center justify-between">
+          {/* Logo */}
           <Link href="/" className="shrink-0">
-            <EUDR_LOGO />
+            <div className="w-[120px] sm:w-[140px] lg:w-auto">
+              <EUDR_LOGO />
+            </div>
           </Link>
 
-          {/* Desktop Right Section */}
-          <div className="hidden lg:flex items-center gap-8">
-            {/* Nav Links */}
-            <nav className="flex items-center gap-6">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-sm font-medium hover:text-[#D6C3A3] transition"
-                >
-                  {item.label}
-                </Link>
-              ))}
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+            <nav className="flex items-center gap-5 xl:gap-7">
+              {navLinks.map((item) => {
+                const active = pathname === item.href;
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`text-sm xl:text-[15px] font-medium transition ${
+                      active
+                        ? "text-[#D6C3A3]"
+                        : "text-white hover:text-[#D6C3A3]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
 
-            {/* Contact Button */}
             <Link
               href="/contact"
-              className="bg-[#D6C3A3] text-black px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition"
+              className="bg-[#D6C3A3] text-black px-5 xl:px-6 py-2.5 rounded-md text-sm font-semibold hover:opacity-90 transition"
             >
               Contact Us
             </Link>
 
-            {/* Right Logos */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 xl:gap-3">
               <HeaderRightFlag1 />
               <HeaderRightFlag2 />
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden flex flex-col gap-1.5"
             aria-label="Toggle Menu"
+            className="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5"
           >
             <span
-              className={`w-6 h-[2px] bg-white transition ${
+              className={`w-6 h-[2px] bg-white transition-all duration-300 ${
                 menuOpen ? "rotate-45 translate-y-[7px]" : ""
               }`}
             />
             <span
-              className={`w-6 h-[2px] bg-white transition ${
+              className={`w-6 h-[2px] bg-white transition-all duration-300 ${
                 menuOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`w-6 h-[2px] bg-white transition ${
+              className={`w-6 h-[2px] bg-white transition-all duration-300 ${
                 menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
               }`}
             />
@@ -85,26 +115,34 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-[#1E1E20] border-t border-white/10 transition-all duration-300 overflow-hidden ${
-          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden fixed left-0 right-0 top-[78px] sm:top-[85px] bg-[#1E1E20] border-t border-white/10 transition-all duration-300 overflow-hidden ${
+          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-sm font-medium hover:text-[#D6C3A3] transition"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="px-5 sm:px-6 py-6 flex flex-col gap-5">
+          {navLinks.map((item) => {
+            const active = pathname === item.href;
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className={`text-sm font-medium transition ${
+                  active
+                    ? "text-[#D6C3A3]"
+                    : "text-white hover:text-[#D6C3A3]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
 
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="bg-[#D6C3A3] text-black px-5 py-3 rounded-md text-sm font-semibold text-center hover:opacity-90 transition"
+            className="bg-[#D6C3A3] text-black py-3 rounded-md text-sm font-semibold text-center hover:opacity-90 transition"
           >
             Contact Us
           </Link>
