@@ -22,7 +22,7 @@ export default function FAQSection() {
 useEffect(() => {
   const fetchFaqs = async () => {
     try {
-      const res = await fetch("http://localhost:1337/api/faqs");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/faqs`);
       const json = await res.json();
 
       console.log("FAQ RESPONSE:", json);
