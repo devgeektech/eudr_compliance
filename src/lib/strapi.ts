@@ -1,4 +1,4 @@
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://admin.eudrcompliancehub.com";
 
 export function getStrapiMediaURL(url: string | null | undefined): string {
   if (!url) return "";
