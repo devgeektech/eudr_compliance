@@ -38,18 +38,24 @@ const CompaniesMustDo = ({ items }: Props) => {
 
         <div className="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-all duration-300" />
 
-        <div className="relative z-10 h-full flex flex-col justify-end p-6 pt-24">
-   <div className="rounded-full absolute top-6 left-6 w-16 h-16 bg-[#BF96551A] flex items-center justify-center">
-  <Icon />
-</div>
+        <div className="relative z-10 h-full flex flex-col justify-between p-6">
+  {/* Top (Icon) */}
+  <div>
+    <div className="w-16 h-16 flex items-center justify-center">
+      <Icon />
+    </div>
+  </div>
 
-          <h3 className="text-white text-2xl font-semibold mb-2">
-            {item.title}
-          </h3>
-          <p className="text-white/90 text-sm leading-6">
-            {item.description}
-          </p>
-        </div>
+  {/* Bottom (Text) */}
+  <div>
+    <h3 className="text-white text-xl font-semibold mb-2">
+      {item.title}
+    </h3>
+    <p className="text-white/90 text-sm leading-6">
+      {item.description}
+    </p>
+  </div>
+</div>
       </div>
     );
   })}

@@ -16,7 +16,7 @@ type LastBannerSectionProps = {
   title: string;
   description: string;
   primaryButton: ButtonItem;
-  secondaryButton: ButtonItem;
+  secondaryButton?: ButtonItem;
 };
 
 const LastBannerSection = ({
@@ -79,7 +79,8 @@ const LastBannerSection = ({
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
           {renderButton(primaryButton, "bg-[#1E2A23]", "text-white")}
 
-          {renderButton(secondaryButton, "bg-[#D6C3A3]", "text-[#1A1A1C]")}
+          {secondaryButton &&
+  renderButton(secondaryButton, "bg-[#D6C3A3]", "text-[#1A1A1C]")}
         </div>
       </div>
     </section>

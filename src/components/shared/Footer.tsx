@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import Link from "next/link";
 import {
   EUDR_LOGO,
   Mail,
@@ -8,8 +11,9 @@ import {
 
 const Footer = () => {
   return (
-   <footer className="w-full bg-[#131315] text-white pt-14 sm:pt-16 pb-8 px-4 sm:px-6 lg:px-8">
-     <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="w-full bg-[#131315] text-white pt-14 sm:pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
         {/* Left Side */}
         <div className="lg:col-span-1">
           <div className="mb-5">
@@ -29,27 +33,27 @@ const Footer = () => {
 
           <ul className="space-y-3 text-white text-sm">
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/" className="hover:text-[#BF9655] transition-all">
                 Home
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/about" className="hover:text-[#BF9655] transition-all">
                 About EUDR
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/services" className="hover:text-[#BF9655] transition-all">
                 Services
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/industry" className="hover:text-[#BF9655] transition-all">
                 Industries
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -60,27 +64,27 @@ const Footer = () => {
 
           <ul className="space-y-3 text-white text-sm">
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/faq" className="hover:text-[#BF9655] transition-all">
                 FAQ
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/contact" className="hover:text-[#BF9655] transition-all">
                 Contact
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/privacy-policy" className="hover:text-[#BF9655] transition-all">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="#" className="hover:text-[#BF9655] transition-all">
+              <Link href="/terms-and-services" className="hover:text-[#BF9655] transition-all">
                 Terms & Services
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -91,21 +95,22 @@ const Footer = () => {
 
           <div className="space-y-4 text-white text-sm">
             <div className="flex items-start gap-3">
-              <Mail className=" text-[#BF9655] mt-0.5" />
+              <Mail className="text-[#BF9655] mt-0.5" />
               <span>info@eudrcompliancehub.com</span>
             </div>
 
             <div className="flex items-start gap-3">
-              <Phone className=" text-[#BF9655] mt-0.5" />
+              <Phone className="text-[#BF9655] mt-0.5" />
               <span>+40 123 456 789</span>
             </div>
 
             <div className="flex items-start gap-3">
-              <Location className=" text-[#BF9655] mt-0.5" />
+              <Location className="text-[#BF9655] mt-0.5" />
               <span>Piatra Neamt, Timisoara, Romania</span>
             </div>
           </div>
         </div>
+
       </div>
 
       {/* Bottom */}

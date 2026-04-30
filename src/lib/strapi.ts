@@ -190,6 +190,35 @@ export type WhyChooseUsCardItem = {
   order: number;
 };
 
+type StrapiBlock = {
+  type: string;
+  children?: {
+    type: string;
+    text: string;
+    bold?: boolean;
+  }[];
+};
+
+export type PrivacyPolicyItem = {
+  id: number;
+  documentId: string;
+  title: string;
+  content: StrapiBlock[];
+};
+
+export type TermsItem = {
+  id: number;
+  documentId: string;
+  title: string;
+  content: {
+    type: string;
+    children?: {
+      type: string;
+      text: string;
+      bold?: boolean;
+    }[];
+  }[];
+};
 // ─── Fetch functions ──────────────────────────────────────────────────────────
 
 export function getProductsCovered() {
@@ -251,6 +280,20 @@ export async function getWhyChooseUsCards(): Promise<WhyChooseUsCardItem[]> {
   return res?.data ?? [];
 }
 
+export async function getPrivacyPolicies(): Promise<PrivacyPolicyItem[]> {
+  const res = await fetchAPI<{ data: PrivacyPolicyItem[] }>(
+    "/privacy-policies?sort=createdAt:asc"
+  );
+
+  return res?.data ?? [];
+}
+export async function getTerms(): Promise<TermsItem[]> {
+  const res = await fetchAPI<{ data: TermsItem[] }>(
+    "/terms-and-services?sort=createdAt:asc"
+  );
+
+  return res?.data ?? [];
+}
 
 //POST APIS
 

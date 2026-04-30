@@ -33,19 +33,19 @@ const WhoWeHelp = () => {
         </p>
 
         {/* Cards */}
-     <div className="mt-14 flex flex-col lg:flex-row lg:flex-nowrap lg:justify-center gap-6 items-center">
+     <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:justify-center gap-6 items-center">
           {whoWeHelpCards.map((item) => {
             const Logo = item.logo;
 
             return (
               <div
                 key={item.title}
-                className="w-[215px] h-[200px] bg-white rounded-2xl flex flex-col items-center justify-center text-center p-6 shadow-md"
+                className="w-full max-w-[220px] min-h-[200px] bg-white rounded-2xl flex flex-col items-center justify-center text-center p-6 shadow-md"
               >
                 {/* Logo */}
-                <div className="mb-4 flex items-center justify-center overflow-hidden">
-                  <Logo className="w-full h-full text-[#BF9655] transition" />
-                </div>
+            <div className="mb-4 flex items-center justify-center ">
+           <Logo className=" text-[#BF9655]" />
+          </div>
 
                 {/* Title */}
                 <p className="text-[#1E1E20] font-medium text-base">

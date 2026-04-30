@@ -16,6 +16,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 
 const slides = [HeroImage, HeroImage2, HeroImage3];
 
@@ -78,13 +79,14 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="bg-[#1E2A23] text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition">
+              <button className="bg-[#1E2A23] text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
                 Get a Free Assessment
               </button>
-
-              <button className="bg-[#D6C3A3] text-black px-6 py-3 rounded-md font-medium hover:opacity-90 transition">
+            <Link href="/contact">
+              <button className="bg-[#D6C3A3] text-black px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
                 Contact Us
               </button>
+              </Link>
             </div>
 
           </div>

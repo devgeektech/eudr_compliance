@@ -1,7 +1,8 @@
-import BookACallCard from '@/src/components/Contact/BookACallCard'
-import ContactDetails from '@/src/components/Contact/ContactDetails'
-import ContactForm from '@/src/components/Contact/ContactForm'
+
 import ContactSection from '@/src/components/Contact/ContactSection'
+import StartYourEUDRComplianceJourneyToday from '@/src/components/Contact/StartYourEUDRComplianceJourneyToday'
+import WhyChooseUs from '@/src/components/Contact/WhyChooseUs'
+
 import PageHeroBanner from '@/src/components/shared/PageHeroBanner'
 import React from 'react'
 
@@ -10,6 +11,8 @@ const Page = () => {
     <div>
       <PageHeroBanner title='Contact Us'/>
       <ContactSection/>
+    <WhyChooseUs/>
+      <StartYourEUDRComplianceJourneyToday/>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 import BgImage from "@/public/Home/images/ReadyToEnsureSec.jpg";
+import Link from "next/link";
 
 const ReadyToEnsure = () => {
   return (
@@ -38,10 +39,11 @@ const ReadyToEnsure = () => {
           <button className="px-6 py-3 rounded-lg bg-[#BF9655] text-white font-medium hover:opacity-90 transition">
             Book a Call
           </button>
-
+        <Link href="/contact">
           <button className="px-6 py-3 rounded-lg bg-white text-[#1E1E20] font-medium hover:bg-gray-100 transition">
             Contact Us
           </button>
+          </Link>
 
         </div>
 

@@ -153,20 +153,20 @@ import {
 
 export const riskIsRealData = [
   {
-    title: "Heavy Financial Penalties",
-    desc: "Failure to comply can result in major fines and unexpected legal costs.",
+    title: "Products may be banned from the EU",
+    desc: "If you can’t prove they are deforestation-free.",
     icon: RIskIsREalIcon1,
     hoverIcon: RiskIsRealWhite1,
   },
   {
-    title: "Supply Chain Disruption",
-    desc: "Unverified sourcing can interrupt operations and delay shipments.",
+    title: "Fines up to 4% of your annual EU turnover",
+    desc: "Plus confiscation of products and public penalties.",
     icon: RIskIsREalIcon2,
     hoverIcon: RiskIsRealWhite2,
   },
   {
-    title: "Brand Reputation Damage",
-    desc: "Customers and partners lose trust when compliance standards are ignored.",
+    title: "Shipments can be blocked at the border",
+    desc: "Delays, costs, and damaged business relationships.",
     icon: RIskIsREalIcon3,
     hoverIcon: RiskIsRealWhite3,
   },
@@ -357,11 +357,11 @@ name: "Due Diligence",
     icon: LedgerDueDiligence,
     bg: "/About/images/plant1.jpg",
     points: [
-      "Supplier verification and onboarding checks",
-      "Continuous monitoring of supply chain risk",
-      "Legal compliance documentation tracking",
-      "Risk mitigation planning and execution",
-      "Audit-ready reporting system",
+      "Collect documented evidence from suppliers",
+      "Assess the risk level based on country and region",
+      "Take concrete steps to reduce or eliminate identified risks",
+      "Keep records for at least 5 years",
+      "File a due diligence statement before placing goods on the market",
     ],
   },
   {
@@ -372,11 +372,11 @@ name: "Due Diligence",
     icon: LedgerTraceability,
     bg: "/About/images/plant2.jpg",
     points: [
-      "End-to-end supply chain visibility",
-      "Batch-level tracking system",
-      "Digital product journey records",
-      "Real-time stakeholder updates",
-      "Tamper-proof logs",
+      "Link every batch of product to its farm or origin plot",
+      "Document each step in the supply chain",
+      "Use farm-level data, not just country-of-origin",
+      "Enable verification by EU competent authorities",
+      "Cover the entire upstream supply chain, not just direct suppliers",
     ],
   },
   {
@@ -387,11 +387,11 @@ name: "Due Diligence",
     icon: LedgerGeoLocation,
     bg: "/About/images/plant3.jpg",
     points: [
-      "GPS-based sourcing validation",
-      "Region risk classification",
-      "Deforestation hotspot detection",
-      "Map-based supplier insights",
-      "Compliance zone checks",
+      "Provide GPS coordinates (latitude and longitude) for each plot",
+      "Cover all plots larger than 4 hectares as polygons",
+      "Smaller plots may be represented as a single point",
+      "Data must be accurate enough to identify the land parcel",
+      "Authorities use this to verify against forest cover change data",
     ],
   },
 ];
@@ -760,4 +760,35 @@ export const exploreByIndustryCards = [
     text: "Production & Due Diligence",
   },
 ] as const;
+
+// Contact page cards data
+
+
+import ResponseIcon from "@/public/Contact/images/svgs/ResponseIcon.svg";
+import ExpertConsultationIcon from "@/public/Contact/images/svgs/ExpertConsultationIcon.svg";
+import ConfidentialDiscussion from "@/public/Contact/images/svgs/ConfidentialDiscussion.svg";
+
+export const whyChooseUsData = [
+  {
+    id: 1,
+    icon: ResponseIcon,
+    title: "Response with in 24 hours",
+    description:
+      "We prioritize every inquiry and guarantee a response within one business day.",
+  },
+  {
+    id: 2,
+    icon: ExpertConsultationIcon,
+    title: "Expert Consultation",
+    description:
+      "Our team consists of certified EUDR compliance specialists with deep industry knowledge.",
+  },
+  {
+    id: 3,
+    icon: ConfidentialDiscussion,
+    title: "Confidential Discussion",
+    description:
+      "All consultations are strictly confidential. Your business information is safe with us.",
+  },
+];
 
