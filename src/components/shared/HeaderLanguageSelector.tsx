@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronDown, Globe, Check } from "lucide-react";
 import {
   HeaderRightFlag1,
   HeaderRightFlag2,
@@ -32,97 +31,48 @@ function persistLocale(locale: AppLocale) {
 
 const HeaderLanguageSelector = () => {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
   const [locale, setLocale] = useState<AppLocale>("en");
-  const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setLocale(readLocaleFromBrowser());
   }, []);
 
-  useEffect(() => {
-    const onDocClick = (e: MouseEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", onDocClick);
-    return () => document.removeEventListener("mousedown", onDocClick);
-  }, []);
-
   const selectLocale = (next: AppLocale) => {
+    if (next === locale) return;
     persistLocale(next);
     setLocale(next);
-    setOpen(false);
     window.dispatchEvent(new CustomEvent(LOCALE_CHANGED_EVENT));
     router.refresh();
   };
 
-  const label = locale === "ro" ? "RO" : "EN";
-
   return (
-    <div className="relative" ref={rootRef}>
+    <div className="flex items-center gap-2">
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        aria-haspopup="listbox"
-        className="flex items-center gap-2 rounded-md bg-[#2C2C2E] px-3 py-2 text-sm font-medium text-white border border-white/10 hover:bg-[#3a3a3c] transition"
+        aria-label="Switch language to English"
+        title="English"
+        onClick={() => selectLocale("en")}
+        className={`cursor-pointer rounded-full transition ${
+          locale === "en"
+            ? "scale-105 ring-2 ring-[#D6C3A3] ring-offset-2 ring-offset-[#1E1E20]"
+            : "opacity-55 saturate-75 hover:opacity-85"
+        }`}
       >
-        <Globe className="h-4 w-4 shrink-0 text-white/90" aria-hidden />
-        <span>{label}</span>
-        <ChevronDown
-          className={`h-4 w-4 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
-          aria-hidden
-        />
+        <HeaderRightFlag1 />
       </button>
-
-      {open ? (
-        <div
-          role="listbox"
-          className="absolute right-0 top-[calc(100%+8px)] z-[60] min-w-[220px] rounded-lg border border-white/10 bg-[#1a1a1a] py-2 shadow-xl"
-        >
-          <p className="px-3 pb-2 text-[11px] font-medium uppercase tracking-wide text-white/45">
-            Select Language
-          </p>
-          <button
-            type="button"
-            role="option"
-            aria-selected={locale === "en"}
-            onClick={() => selectLocale("en")}
-            className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-sm text-[#D6C3A3] hover:bg-white/10 ${
-              locale === "en" ? "bg-white/10" : ""
-            }`}
-          >
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full">
-              <HeaderRightFlag1 />
-            </span>
-            <span className="flex-1">English (EN)</span>
-            {locale === "en" ? (
-              <Check className="h-4 w-4 shrink-0 text-white" aria-hidden />
-            ) : (
-              <span className="w-4" />
-            )}
-          </button>
-          <button
-            type="button"
-            role="option"
-            aria-selected={locale === "ro"}
-            onClick={() => selectLocale("ro")}
-            className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-sm text-[#D6C3A3] hover:bg-white/10 ${
-              locale === "ro" ? "bg-white/10" : ""
-            }`}
-          >
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full">
-              <HeaderRightFlag2 />
-            </span>
-            <span className="flex-1">Română (RO)</span>
-            {locale === "ro" ? (
-              <Check className="h-4 w-4 shrink-0 text-white" aria-hidden />
-            ) : (
-              <span className="w-4" />
-            )}
-          </button>
-        </div>
-      ) : null}
+      <button
+        type="button"
+        aria-label="Switch language to Romanian"
+        title="Romana"
+        onClick={() => selectLocale("ro")}
+        className={`cursor-pointer rounded-full transition ${
+          locale === "ro"
+            ? "scale-105 ring-2 ring-[#D6C3A3] ring-offset-2 ring-offset-[#1E1E20]"
+            : "opacity-55 saturate-75 hover:opacity-85"
+        }`}
+      >
+        <HeaderRightFlag2 />
+      </button>
     </div>
   );
 };
