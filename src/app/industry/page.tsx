@@ -3,7 +3,7 @@ import IndustryDetailSections from '@/src/components/Industry/IndustryDetailSect
 import TailoredComplianceAcrossIndustries from '@/src/components/Industry/TailoredComplianceAcrossIndustries'
 import GetEUDRCompliantwithConfidence from '@/src/components/Services/GetEUDRCompliantwithConfidence'
 import PageHeroBanner from '@/src/components/shared/PageHeroBanner'
-import { getIndustrySections } from "@/src/lib/strapi";
+import { getIndustrySections } from "@/src/lib/strapi-server";
 
 
 import React from 'react'

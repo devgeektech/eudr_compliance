@@ -1,5 +1,5 @@
 import React from "react";
-import { getPrivacyPolicies } from "@/src/lib/strapi";
+import { getPrivacyPolicies } from "@/src/lib/strapi-server";
 import { renderBlocks } from "@/src/lib/helpers/renderBlocks";
 
 

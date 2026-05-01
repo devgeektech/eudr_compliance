@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import React from "react";
-import { getTerms } from "@/src/lib/strapi";
+import { getTerms } from "@/src/lib/strapi-server";
 import { renderBlocks } from "@/src/lib/helpers/renderBlocks";
 
 const TermsAndServicesPage = async () => {

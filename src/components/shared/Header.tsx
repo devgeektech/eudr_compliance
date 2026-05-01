@@ -3,11 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  EUDR_LOGO,
-  HeaderRightFlag1,
-  HeaderRightFlag2,
-} from "@/public/Home/images/svgs";
+import { EUDR_LOGO, HeaderRightFlag1, HeaderRightFlag2 } from "@/public/Home/images/svgs";
+import HeaderLanguageSelector from "./HeaderLanguageSelector";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -85,6 +82,7 @@ const Header = () => {
             <div className="flex items-center gap-2 xl:gap-3">
               <HeaderRightFlag1 />
               <HeaderRightFlag2 />
+              <HeaderLanguageSelector />
             </div>
           </div>
 
@@ -147,9 +145,10 @@ const Header = () => {
             Contact Us
           </Link>
 
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <HeaderRightFlag1 />
             <HeaderRightFlag2 />
+            <HeaderLanguageSelector />
           </div>
         </div>
       </div>

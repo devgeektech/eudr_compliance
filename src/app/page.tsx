@@ -12,7 +12,7 @@ import {
   getProductsCovered,
   getWhatWeDoCards,
   getHowItWorksSteps,
-} from "@/src/lib/strapi";
+} from "@/src/lib/strapi-server";
 
 export default async function Home() {
   const [productsCovered, whatWeDoCards, howItWorksSteps] = await Promise.all([

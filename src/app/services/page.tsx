@@ -4,7 +4,7 @@ import GetEUDRCompliantwithConfidence from "@/src/components/Services/GetEUDRCom
 import OtherSections from "@/src/components/Services/OtherSections";
 import WhatWeOffer from "@/src/components/Services/WhatWeOffer";
 import PageHeroBanner from "@/src/components/shared/PageHeroBanner";
-import { getWhatWeOfferCards, getServiceSections } from "@/src/lib/strapi";
+import { getWhatWeOfferCards, getServiceSections } from "@/src/lib/strapi-server";
 
 export default async function ServicesPage() {
   const [whatWeOfferCards, serviceSections] = await Promise.all([
