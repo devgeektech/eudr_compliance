@@ -13,7 +13,7 @@ const page = async () => {
   const industries= await getIndustrySections()
   return (
     <div>
-      <PageHeroBanner title='Industries'/>
+      <PageHeroBanner titleKey='page.industries'/>
       <TailoredComplianceAcrossIndustries/>
       <ExploreByIndustry/>
       <IndustryDetailSections sections={industries}/>

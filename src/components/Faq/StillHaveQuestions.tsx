@@ -1,11 +1,13 @@
-
 "use client";
+
 import React from "react";
 import { useRouter } from "next/navigation";
 import LastBannerSection from "../shared/LastBannerSection";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 const StillHaveQuestions = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleContact = () => {
     router.push("/contact");
@@ -18,14 +20,14 @@ const StillHaveQuestions = () => {
   return (
     <div>
       <LastBannerSection
-        title="Still have questions?"
-        description="Can't find the answer you're looking for? Our team of regulatory experts is ready to help you navigate the complexities of EUDR."
+        title={t("cta3.title")}
+        description={t("cta3.description")}
         primaryButton={{
-          label: "Contact Us",
+          label: t("cta3.primary"),
           onClick: handleContact,
         }}
         secondaryButton={{
-          label: "Book a Call",
+          label: t("cta3.secondary"),
           onClick: handleBookCall,
         }}
       />

@@ -14,7 +14,7 @@ export default async function ServicesPage() {
 
   return (
     <div>
-      <PageHeroBanner title="Services" />
+      <PageHeroBanner titleKey='page.services' />
       <WhatWeOffer items={whatWeOfferCards} />
       <OtherSections sections={serviceSections} />
       <GetEUDRCompliantwithConfidence />

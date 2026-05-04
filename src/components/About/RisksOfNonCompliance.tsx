@@ -1,22 +1,33 @@
 "use client";
 
 import React from "react";
-import { risksOfNonCompliance } from "@/src/constants";
+import {
+  risksOfNonCompliance_en,
+  risksOfNonCompliance_ro,
+} from "@/src/constants";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 const RisksOfNonCompliance = () => {
+  const { t, locale } = useTranslation();
+
+  const risksOfNonCompliance =
+    locale === "ro"
+      ? risksOfNonCompliance_ro
+      : risksOfNonCompliance_en;
+
   return (
     <section className="relative w-full bg-[#1A1A1C] py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-         <div className="absolute inset-0 bg-[#006B2C0A] pointer-events-none" />
+      <div className="absolute inset-0 bg-[#006B2C0A] pointer-events-none" />
+
       <div className="relative max-w-7xl mx-auto">
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto">
-         <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
-            Risks of Non-Compliance
+          <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
+            {t("riskSection.title")}
           </h2>
 
           <p className="text-white text-sm sm:text-base md:text-lg mt-4 leading-relaxed">
-            Failure to comply with EUDR carries significant legal and financial
-            consequences.
+            {t("riskSection.subtitle")}
           </p>
         </div>
 
@@ -54,7 +65,6 @@ const RisksOfNonCompliance = () => {
           })}
         </div>
       </div>
-    
     </section>
   );
 };

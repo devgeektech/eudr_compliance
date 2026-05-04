@@ -98,5 +98,55 @@
   "bookCall.feature1": "Quick response within 24 hours",
   "bookCall.feature2": "30-minute free consultation",
   "bookCall.feature3": "Expert guidance tailored to your needs",
-  "bookCall.button": "Schedule Now"
+  "bookCall.button": "Schedule Now",
+
+  "about.title": "What is EUDR?",
+"about.p1": "The European Union Deforestation Regulation (EUDR) is a landmark legislative framework designed to ensure that products placed on the EU market do not contribute to global deforestation or forest degradation. It forms a key pillar of the European Green Deal, reinforcing the EU's commitment to sustainable and responsible sourcing practices worldwide.",
+"about.p2": "By placing accountability directly on companies, the regulation shifts environmental responsibility into the corporate boardroom. Businesses must actively monitor, assess, and manage their supply chains to ensure compliance, making sustainability a core part of operational and strategic decision-making.",
+"about.p3": "The regulation requires that any operator or trader placing commodities on the EU market, or exporting them, must demonstrate that products do not originate from land deforested after December 31, 2020. This represents a fundamental transformation in global supply chain transparency, going far beyond traditional reporting requirements.",
+"about.highlight": "The EUDR stands among the most impactful environmental trade regulations ever introduced, influencing global supply chains across six continents and reshaping how businesses source, monitor, and ensure sustainability compliance worldwide.",
+
+
+  "sustain.title": "Empowering Sustainable Trade",
+  "sustain.p1": "We are an elite consulting firm dedicated exclusively to EU Deforestation Regulation (EUDR) compliance.",
+  "sustain.p2": "Our deep expertise enables us to provide end-to-end compliance support, robust risk mitigation strategies, and unparalleled supply chain transparency. We simplify complex regulatory requirements into actionable, scalable systems for global businesses.",
+
+  "ledger.title": "The Compliance Ledger",
+"ledger.subtitle": "Track and manage all your EUDR compliance data in one place",
+"ledger.concept": "Concept",
+"ledger.tagline": "Know before you sell",
+
+"riskSection.title": "Risks of Non-Compliance",
+"riskSection.subtitle": "Failure to comply with EUDR carries significant legal and financial consequences.",
+
+"eudrHelp.title": "Get Help with EUDR Compliance",
+"eudrHelp.description": "Don't navigate the complexity alone. Our consultants and digital audit tools ensure your supply chain is ready for the future.",
+"eudrHelp.primaryBtn": "Request Initial Assessment",
+"eudrHelp.secondaryBtn": "View Compliance Packages",
+
+"cta2.title": "Get EUDR Compliant with Confidence",
+"cta2.description": "We help businesses across industries implement EUDR requirements efficiently. Start your compliance journey today with expert guidance.",
+"cta2.primary": "Request Initial Assessment",
+"cta2.secondary": "View Industry Guides",
+
+"cta3.title": "Still have questions?",
+"cta3.description": "Can't find the answer you're looking for? Our team of regulatory experts is ready to help you navigate the complexities of EUDR.",
+"cta3.primary": "Contact Us",
+"cta3.secondary": "Book a Call",
+
+"page.about": "About Us",
+"page.services": "Services",
+"page.contact": "Contact Us",
+"page.faq": "Frequently Asked Questions",
+"page.industries": "Industries",
+
+"industry.tailored.title": "Tailored Compliance Across Industries",
+"industry.tailored.desc": "Our consulting services are tailored to support businesses across key industries impacted by EUDR. We help you understand requirements, manage risks, and implement compliance systems — so you can focus on growing your business with confidence.",
+
+"industry.explore.title": "Explore By Industries",
+"industry.explore.desc": "Select your industry to learn how EUDR impacts your business.",
+"common.loading": "Loading..."
+
+
+
 }

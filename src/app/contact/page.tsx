@@ -9,7 +9,7 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <PageHeroBanner title='Contact Us'/>
+      <PageHeroBanner titleKey='page.contact'/>
       <ContactSection/>
     <WhyChooseUs/>
       <StartYourEUDRComplianceJourneyToday/>

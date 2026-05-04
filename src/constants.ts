@@ -343,17 +343,18 @@ export const companiesMustDoCards = [
 ];
 
 
+import {
+  LedgerDueDiligence,
+  LedgerTraceability,
+  LedgerGeoLocation,
+} from "@/public/About/images/svgs";
 
-import {LedgerDueDiligence, LedgerTraceability, LedgerGeoLocation} from "@/public/About/images/svgs";
-
-export const ledgerCards = [
+// ENGLISH
+export const ledgerCards_en = [
   {
     id: 1,
-    title:
-      `Due diligence is the process companies must follow to ensure their products are
-deforestation-free and legally produced. It is not just a one-time check it is an
-ongoing system of information gathering, risk assessment, and risk mitigation.`,
-name: "Due Diligence",
+    name: "Due Diligence",
+    title: `Due diligence is the process companies must follow to ensure their products are deforestation-free and legally produced. It is not just a one-time check it is an ongoing system of information gathering, risk assessment, and risk mitigation.`,
     icon: LedgerDueDiligence,
     bg: "/About/images/plant1.jpg",
     points: [
@@ -366,9 +367,8 @@ name: "Due Diligence",
   },
   {
     id: 2,
-    title:
-      `Traceability means being able to trace a product all the way back to the specific plot of land where it was produced. This allows authorities and companies to verify that the product did not come from recently deforested or degraded land.`,
-      name: "Traceability",
+    name: "Traceability",
+    title: `Traceability means being able to trace a product all the way back to the specific plot of land where it was produced.`,
     icon: LedgerTraceability,
     bg: "/About/images/plant2.jpg",
     points: [
@@ -376,22 +376,67 @@ name: "Due Diligence",
       "Document each step in the supply chain",
       "Use farm-level data, not just country-of-origin",
       "Enable verification by EU competent authorities",
-      "Cover the entire upstream supply chain, not just direct suppliers",
+      "Cover the entire upstream supply chain",
     ],
   },
   {
     id: 3,
-    title:
-      `Geolocation is the requirement to provide precise geographic coordinates of every plot of land where the commodity was produced. This data is cross-referenced with satellite imagery and deforestation maps to confirm compliance.`,
     name: "Geolocation",
+    title: `Geolocation is the requirement to provide precise geographic coordinates of every plot of land.`,
     icon: LedgerGeoLocation,
     bg: "/About/images/plant3.jpg",
     points: [
-      "Provide GPS coordinates (latitude and longitude) for each plot",
-      "Cover all plots larger than 4 hectares as polygons",
-      "Smaller plots may be represented as a single point",
-      "Data must be accurate enough to identify the land parcel",
-      "Authorities use this to verify against forest cover change data",
+      "Provide GPS coordinates (latitude and longitude)",
+      "Cover all plots larger than 4 hectares",
+      "Smaller plots may be represented as a point",
+      "Ensure accuracy of land identification",
+      "Used for deforestation verification",
+    ],
+  },
+];
+
+// ROMANIAN
+export const ledgerCards_ro = [
+  {
+    id: 1,
+    name: "Diligență Datorată",
+    title: `Diligența datorată este procesul prin care companiile se asigură că produsele lor sunt fără defrișare și produse legal.`,
+    icon: LedgerDueDiligence,
+    bg: "/About/images/plant1.jpg",
+    points: [
+      "Colectați dovezi documentate de la furnizori",
+      "Evaluați nivelul de risc în funcție de țară și regiune",
+      "Reduceți sau eliminați riscurile identificate",
+      "Păstrați evidențele timp de cel puțin 5 ani",
+      "Depuneți declarația înainte de introducerea pe piață",
+    ],
+  },
+  {
+    id: 2,
+    name: "Trasabilitate",
+    title: `Trasabilitatea înseamnă posibilitatea de a urmări produsul până la parcela de origine.`,
+    icon: LedgerTraceability,
+    bg: "/About/images/plant2.jpg",
+    points: [
+      "Conectați fiecare lot la parcela de origine",
+      "Documentați fiecare etapă din lanțul de aprovizionare",
+      "Folosiți date la nivel de fermă",
+      "Permiteți verificarea de către autorități",
+      "Acoperiți întregul lanț de aprovizionare",
+    ],
+  },
+  {
+    id: 3,
+    name: "Geolocație",
+    title: `Geolocația necesită coordonate precise pentru fiecare parcelă.`,
+    icon: LedgerGeoLocation,
+    bg: "/About/images/plant3.jpg",
+    points: [
+      "Furnizați coordonate GPS",
+      "Includeți parcele peste 4 hectare",
+      "Parcelele mici pot fi puncte",
+      "Datele trebuie să fie precise",
+      "Verificate cu date satelitare",
     ],
   },
 ];
@@ -403,7 +448,7 @@ name: "Due Diligence",
 
 import {ConfiscationofGoodIcon, HeavyFinancialPenaltiesIcon, EnhancedRegulatoryScrutinyIcon, MarketAccessBanned, ReputationalDamageIcon} from "@/public/About/images/svgs";
 
-export const risksOfNonCompliance = [
+export const risksOfNonCompliance_en = [
   {
     id: 1,
     icon: ConfiscationofGoodIcon,
@@ -443,6 +488,49 @@ export const risksOfNonCompliance = [
     severity: "Significant",
     description:
       "Public non-compliance can damage brand trust, investor confidence, and customer relationships.",
+  },
+];
+
+export const risksOfNonCompliance_ro = [
+  {
+    id: 1,
+    icon: ConfiscationofGoodIcon,
+    title: "Confiscarea Bunurilor",
+    severity: "Ridicat",
+    description:
+      "Produsele care nu respectă cerințele EUDR pot fi confiscate, retrase de la vânzare sau blocate la intrarea pe piață.",
+  },
+  {
+    id: 2,
+    icon: HeavyFinancialPenaltiesIcon,
+    title: "Sancțiuni Financiare Ridicate",
+    severity: "Critic",
+    description:
+      "Autoritățile pot impune amenzi semnificative și penalități financiare pentru încălcări sau declarații false.",
+  },
+  {
+    id: 3,
+    icon: EnhancedRegulatoryScrutinyIcon,
+    title: "Control Regulator Sporit",
+    severity: "Ridicat",
+    description:
+      "Companiile neconforme pot fi supuse unor audituri repetate, investigații și unui control mai strict.",
+  },
+  {
+    id: 4,
+    icon: MarketAccessBanned,
+    title: "Interdicție de Acces pe Piață",
+    severity: "Critic",
+    description:
+      "Nerespectarea poate duce la restricții temporare sau permanente privind vânzarea pe piețele reglementate.",
+  },
+  {
+    id: 5,
+    icon: ReputationalDamageIcon,
+    title: "Afectarea Reputației",
+    severity: "Semnificativ",
+    description:
+      "Neconformitatea publică poate afecta încrederea în brand, investitori și relațiile cu clienții.",
   },
 ];
 

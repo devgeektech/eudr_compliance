@@ -9,7 +9,7 @@ export default async function page() {
 
   return (
     <div>
-      <PageHeroBanner title='Fraquently Asked Questions'/>
+      <PageHeroBanner titleKey='page.faq'/>
       <FAQSection faqs={faqs}/>
       <StillHaveQuestions/>
       <WhyChooseUsCards/>

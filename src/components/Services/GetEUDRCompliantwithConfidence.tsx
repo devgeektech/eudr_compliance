@@ -2,12 +2,14 @@
 
 import React from "react";
 import LastBannerSection from "@/src/components/shared/LastBannerSection";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 const GetEUDRCompliantwithConfidence = () => {
+  const { t } = useTranslation();
+
   const handleRequestInitialAssessment = () => {
     console.log("Request Initial Assessment clicked");
   };
-
 
   const handleViewIndustryGuides = () => {
     console.log("View Industry Guides clicked");
@@ -15,14 +17,14 @@ const GetEUDRCompliantwithConfidence = () => {
 
   return (
     <LastBannerSection
-      title="Get EUDR Compliant with Confidence"
-      description="We help businesses across industries implement EUDR requirements efficiently. Start your compliance journey today with expert guidance."
+      title={t("cta2.title")}
+      description={t("cta2.description")}
       primaryButton={{
-        label: "Request Initial Assessment",
+        label: t("cta2.primary"),
         onClick: handleRequestInitialAssessment,
       }}
       secondaryButton={{
-        label: "View Industry Guides",
+        label: t("cta2.secondary"),
         onClick: handleViewIndustryGuides,
       }}
     />

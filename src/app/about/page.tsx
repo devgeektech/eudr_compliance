@@ -27,7 +27,7 @@ export default async function AboutPage() {
 
   return (
     <div>
-      <PageHeroBanner title="about us" />
+      <PageHeroBanner titleKey='page.about' />
       <WhatIsEUDR stats={stats} features={features} />
       <EmpoweringSustainability cards={sustainabilityCards} />
       <ProductsCoveredSec items={productsCovered} />
