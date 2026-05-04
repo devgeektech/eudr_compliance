@@ -13,7 +13,7 @@ import {
   getSustainabilityCards,
   getCompaniesMustDoCards,
   getProductsCovered,
-} from "@/src/lib/strapi";
+} from "@/src/lib/strapi-server";
 
 export default async function AboutPage() {
   const [stats, features, sustainabilityCards, companiesMustDoCards, productsCovered] =

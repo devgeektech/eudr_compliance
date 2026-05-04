@@ -136,7 +136,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   const { carouselRef, orientation } = useCarousel()
 
   return (
-   <div ref={carouselRef} className="overflow-hidden bg-[#303032]">
+   <div ref={carouselRef} className="overflow-hidden bg-transparent">
       <div
         className={cn(
     "flex",
@@ -162,7 +162,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-  "min-w-0 shrink-0 grow-0 basis-full flex-[0_0_100%] bg-[#303032] transform-gpu",
+  "min-w-0 shrink-0 grow-0 basis-full flex-[0_0_100%] bg-transparent transform-gpu",
   className
 )}
       {...props}
@@ -174,6 +174,7 @@ function CarouselPrevious({
   className,
   variant = "outline",
   size = "icon-sm",
+  children,
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
@@ -194,7 +195,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon />
+      {children ?? <ChevronLeftIcon />}
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -204,6 +205,7 @@ function CarouselNext({
   className,
   variant = "outline",
   size = "icon-sm",
+  children,
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
@@ -224,7 +226,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon />
+      {children ?? <ChevronRightIcon />}
       <span className="sr-only">Next slide</span>
     </Button>
   )

@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import InfoCard from "@/src/components/shared/InfoCard";
-import { getWhyChooseUsCards } from "@/src/lib/strapi";
+import { getWhyChooseUsCards } from "@/src/lib/strapi-client";
 import { getIconComponent } from "@/src/lib/iconMap";
-import type { WhyChooseUsCardItem } from "@/src/lib/strapi";
+import type { WhyChooseUsCardItem } from "@/src/lib/strapi-shared";
+import { LOCALE_CHANGED_EVENT } from "@/src/lib/i18n-locale";
 
 const WhyChooseUs = () => {
   const [cards, setCards] = useState<WhyChooseUsCardItem[]>([]);
@@ -16,6 +17,11 @@ const WhyChooseUs = () => {
     };
 
     load();
+    const onLocale = () => {
+      load();
+    };
+    window.addEventListener(LOCALE_CHANGED_EVENT, onLocale);
+    return () => window.removeEventListener(LOCALE_CHANGED_EVENT, onLocale);
   }, []);
 
   return (

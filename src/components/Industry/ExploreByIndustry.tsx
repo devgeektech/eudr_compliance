@@ -2,27 +2,30 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { getExploreIndustries } from "@/src/lib/strapi";
+import { getExploreIndustries } from "@/src/lib/strapi-client";
 import { getIconComponent } from "@/src/lib/iconMap";
-import type { ExploreIndustryItem } from "@/src/lib/strapi";
+import type { ExploreIndustryItem } from "@/src/lib/strapi-shared";
+import { LOCALE_CHANGED_EVENT } from "@/src/lib/i18n-locale";
 
 const ExploreByIndustry = () => {
   const [cards, setCards] = useState<ExploreIndustryItem[]>([]);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  const load = async () => {
-    const list = await getExploreIndustries();
+  useEffect(() => {
+    const load = async () => {
+      setLoading(true);
+      const list = await getExploreIndustries();
+      setCards(list || []);
+      setLoading(false);
+    };
 
-    console.log("LIST:", list);
-
-    setCards(list || []);
-    setLoading(false);
-  };
-
-  load();
-}, []);
-   
+    load();
+    const onLocale = () => {
+      load();
+    };
+    window.addEventListener(LOCALE_CHANGED_EVENT, onLocale);
+    return () => window.removeEventListener(LOCALE_CHANGED_EVENT, onLocale);
+  }, []);
 
   return (
     <section className="relative w-full py-16 sm:py-20 overflow-hidden">
