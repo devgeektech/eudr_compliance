@@ -1,29 +1,26 @@
-import React from "react";
+"use client";
+
 import { riskIsRealData } from "@/src/constants";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 const RiskIsReal = () => {
+  const { t } = useTranslation();
+
   return (
     <section
-      className=" w-full py-20 px-6 bg-cover bg-center bg-no-repeat
-      "
-      style={{
-        backgroundImage: "url('Home/images/The_Risk_Is_Real.jpg')",
-      }}
+      className="w-full py-20 px-6 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('Home/images/The_Risk_Is_Real.jpg')" }}
     >
-      {/* Optional Overlay */}
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
-            The Risk Is Real
+            {t("risk.title")}
           </h2>
-
           <p className="text-gray-300 mt-3 max-w-2xl mx-auto">
-            Non-compliance can cost your business more than you think.
+            {t("risk.subtitle")}
           </p>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {riskIsRealData.map((item, idx) => {
             const Icon = item.icon;
@@ -32,28 +29,17 @@ const RiskIsReal = () => {
             return (
               <div
                 key={idx}
-                className=" group  bg-[#1E2A23] hover:bg-[#BF9655] rounded-xl p-7 transition-all duration-300 cursor-pointer
-                "
+                className="group bg-[#1E2A23] hover:bg-[#BF9655] rounded-xl p-7 transition-all duration-300 cursor-pointer"
               >
-                {/* Icon */}
                 <div className="mb-5 w-fit relative">
-                  <div className="group-hover:hidden">
-                    <Icon />
-                  </div>
-
-                  <div className="hidden group-hover:block">
-                    <HoverIcon />
-                  </div>
+                  <div className="group-hover:hidden"><Icon /></div>
+                  <div className="hidden group-hover:block"><HoverIcon /></div>
                 </div>
-
-                {/* Title */}
                 <h3 className="text-white text-xl font-medium text-left">
-                  {item.title}
+                  {t(`risk.card${idx}.title`)}
                 </h3>
-
-                {/* Desc */}
                 <p className="text-gray-300 group-hover:text-white/90 text-sm leading-6 mt-3 text-left">
-                  {item.desc}
+                  {t(`risk.card${idx}.desc`)}
                 </p>
               </div>
             );

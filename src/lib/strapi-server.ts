@@ -16,6 +16,7 @@ import {
   type IndustrySectionItem,
   type PrivacyPolicyItem,
   type TermsItem,
+  type FaqItem,
 } from "./strapi-shared";
 
 async function getLocale(): Promise<AppLocale> {
@@ -104,4 +105,13 @@ export async function getTerms(): Promise<TermsItem[]> {
     await getLocale(),
   );
   return res?.data ?? [];
+}
+
+export async function getFaqs(): Promise<FaqItem[]> {
+  const res = await strapiFetch<{ data: FaqItem[] } | FaqItem[]>(
+    "/faqs",
+    await getLocale(),
+  );
+  if (Array.isArray(res)) return res;
+  return (res as { data: FaqItem[] })?.data ?? [];
 }

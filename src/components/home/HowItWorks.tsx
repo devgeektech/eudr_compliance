@@ -1,18 +1,22 @@
-import React from "react";
+"use client";
+
 import { getIconComponent } from "@/src/lib/iconMap";
 import type { HowItWorksStepItem } from "@/src/lib/strapi";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 type Props = {
   items: HowItWorksStepItem[];
 };
 
 const HowItWorks = ({ items }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <section className="w-full bg-[#1A1A1C] py-20 px-6">
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-semibold text-white">How It Works</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-white">{t("howItWorks.title")}</h2>
         <p className="text-white mt-3 max-w-2xl mx-auto">
-          A structured 6-step process designed to simplify compliance and streamline execution.
+          {t("howItWorks.subtitle")}
         </p>
       </div>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-7">

@@ -1,0 +1,91 @@
+STATIC FRONTEND TRANSLATION — IMPLEMENTATION NOTES
+====================================================
+
+PROBLEM
+-------
+Clicking the flag in the header already switched Strapi CMS content to Romanian
+(via ?locale=ro query param). But all hardcoded UI text (nav labels, section
+headings, button labels, form fields, etc.) remained in English regardless of
+which flag was selected.
+
+SOLUTION OVERVIEW
+-----------------
+Added a lightweight custom translation layer that plugs directly into the
+existing locale infrastructure (cookies + LOCALE_CHANGED_EVENT). No third-party
+i18n library was added.
+
+
+FILES CREATED
+-------------
+
+1. src/locales/en.json
+   - All English static strings, keyed by dot-notation (e.g. "nav.home", "hero.title")
+   - Covers: nav, footer, hero, all home sections, contact form/details/book-call,
+     services page, FAQ section
+
+2. src/locales/ro.json
+   - Romanian translations for every key in en.json
+   - Translated by section: navigation, footer, hero, WhatWeDo, HowItWorks,
+     WhoWeHelp, ProductsCovered, ReadyToEnsure, RiskIsReal, FAQ, WhatWeOffer,
+     ContactForm, ContactDetails, BookACallCard
+
+3. src/hooks/useTranslation.ts
+   - Custom React hook: useTranslation()
+   - On mount: reads current locale from document.cookie (key: "language")
+   - Listens to window event "app:locale-changed" (dispatched by
+     HeaderLanguageSelector when a flag is clicked)
+   - Returns t(key) function that looks up the string in the correct locale dict
+   - When the flag is clicked → event fires → hook re-renders → all t() calls
+     update instantly, with no page reload needed for client components
+
+
+HOW IT CONNECTS TO THE EXISTING SYSTEM
+---------------------------------------
+HeaderLanguageSelector (unchanged) already:
+  - Writes cookie: language=en|ro
+  - Dispatches: window.dispatchEvent(new CustomEvent("app:locale-changed"))
+  - Calls: router.refresh()  ← re-fetches server components from Strapi
+
+useTranslation listens to the same "app:locale-changed" event, so client
+components update their static text at exactly the same moment Strapi content
+refreshes.
+
+
+ALSO FIXED (same session)
+--------------------------
+- Added FaqItem type to strapi-shared.ts (was missing after module split)
+- Added getFaqs() to strapi-server.ts (fetches /faqs with locale param)
+- Both faq/page.tsx and home page.tsx fetch FAQs server-side and pass as props,
+  eliminating the previous client-side fetch that caused CORS errors
+
+
+COMPONENTS UPDATED
+------------------
+All components below now call useTranslation() and replace hardcoded strings
+with t("key"):
+
+  src/components/shared/Header.tsx          — nav links, Contact Us button
+  src/components/shared/Footer.tsx          — all footer text and link labels
+  src/components/home/Hero.tsx              — title, subtitle, CTA buttons, aria-labels
+  src/components/home/WhatWeDo.tsx          — section heading + subtitle
+  src/components/home/HowItWorks.tsx        — section heading + subtitle
+  src/components/home/WhoWeHelp.tsx         — heading, subtitle, card titles
+  src/components/home/ProductsCoveredSec.tsx — heading + subtitle
+  src/components/home/ReadyToEnsure.tsx     — heading, subtitle, buttons
+  src/components/home/RiskIsReal.tsx        — heading, subtitle, all 3 card titles+descs
+  src/components/home/FAQsec.tsx            — heading, subtitle, contact button
+  src/components/Contact/ContactForm.tsx    — all labels, placeholders, options, messages
+  src/components/Contact/ContactDetails.tsx — title, all field labels
+  src/components/Contact/BookACallCard.tsx  — title, subtitle, feature list, button
+  src/components/Services/WhatWeOffer.tsx   — heading + subtitle
+
+Server components that previously had no "use client" directive were given one
+so they can use the hook. Their props (items from Strapi) are still passed from
+server pages as before — this change only affects the static text layer.
+
+
+ADDING MORE TRANSLATIONS IN THE FUTURE
+----------------------------------------
+1. Add a new key+value to both src/locales/en.json and src/locales/ro.json
+2. In the component, import useTranslation and call t("your.new.key")
+   That's it — no library config, no provider setup required.

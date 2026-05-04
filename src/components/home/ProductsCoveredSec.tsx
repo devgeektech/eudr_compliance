@@ -1,30 +1,27 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
 import SectionBg from "@/public/Home/images/Products Covered Section.png";
 import { getStrapiMediaURL, type ProductCoveredItem } from "@/src/lib/strapi";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 type Props = {
   items: ProductCoveredItem[];
 };
 
 const ProductsCoveredSec = ({ items }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative w-full overflow-hidden">
-      <Image
-        src={SectionBg}
-        alt="Products Covered Section"
-        fill
-        priority
-        unoptimized
-        className="object-cover"
-      />
+      <Image src={SectionBg} alt="Products Covered Section" fill priority unoptimized className="object-cover" />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-[140px] 2xl:px-[220px] py-14 sm:py-16 md:py-20">
         <h2 className="text-center text-white font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-          Products Covered by EUDR
+          {t("products.title")}
         </h2>
         <p className="text-center text-white/90 mt-4 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg">
-          The regulation covers seven key commodity groups linked to deforestation.
+          {t("products.subtitle")}
         </p>
         <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-y-8 gap-x-4 sm:gap-x-6 md:gap-8">
           {items.map((item) => {

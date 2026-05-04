@@ -1,5 +1,3 @@
-
-
 import FAQSection from "../components/home/FAQsec";
 import Hero from "../components/home/Hero";
 import HowItWorks from "../components/home/HowItWorks";
@@ -12,13 +10,15 @@ import {
   getProductsCovered,
   getWhatWeDoCards,
   getHowItWorksSteps,
+  getFaqs,
 } from "@/src/lib/strapi-server";
 
 export default async function Home() {
-  const [productsCovered, whatWeDoCards, howItWorksSteps] = await Promise.all([
+  const [productsCovered, whatWeDoCards, howItWorksSteps, faqs] = await Promise.all([
     getProductsCovered(),
     getWhatWeDoCards(),
     getHowItWorksSteps(),
+    getFaqs(),
   ]);
 
   return (
@@ -30,7 +30,7 @@ export default async function Home() {
       <HowItWorks items={howItWorksSteps} />
       <ReadyToEnsure />
       <RiskIsReal />
-      <FAQSection />
+      <FAQSection faqs={faqs} />
     </div>
   );
 }

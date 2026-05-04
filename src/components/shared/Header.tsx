@@ -5,38 +5,32 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EUDR_LOGO } from "@/public/Home/images/svgs";
 import HeaderLanguageSelector from "./HeaderLanguageSelector";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About EUDR", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Industry", href: "/industry" },
-  { label: "FAQ", href: "/faq" },
+const NAV_KEYS = [
+  { key: "nav.home", href: "/" },
+  { key: "nav.about", href: "/about" },
+  { key: "nav.services", href: "/services" },
+  { key: "nav.industry", href: "/industry" },
+  { key: "nav.faq", href: "/faq" },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
-  // close mobile menu on desktop resize
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setMenuOpen(false);
-      }
+      if (window.innerWidth >= 1024) setMenuOpen(false);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // prevent body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    return () => { document.body.style.overflow = "auto"; };
   }, [menuOpen]);
 
   return (
@@ -53,20 +47,17 @@ const Header = () => {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8 xl:gap-10">
             <nav className="flex items-center gap-5 xl:gap-7">
-              {navLinks.map((item) => {
+              {NAV_KEYS.map((item) => {
                 const active = pathname === item.href;
-
                 return (
                   <Link
-                    key={item.label}
+                    key={item.key}
                     href={item.href}
                     className={`text-sm xl:text-[15px] font-medium transition ${
-                      active
-                        ? "text-[#D6C3A3]"
-                        : "text-white hover:text-[#D6C3A3]"
+                      active ? "text-[#D6C3A3]" : "text-white hover:text-[#D6C3A3]"
                     }`}
                   >
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 );
               })}
@@ -76,7 +67,7 @@ const Header = () => {
               href="/contact"
               className="bg-[#D6C3A3] text-black px-5 xl:px-6 py-2.5 rounded-md text-sm font-semibold hover:opacity-90 transition"
             >
-              Contact Us
+              {t("nav.contact")}
             </Link>
 
             <HeaderLanguageSelector />
@@ -88,21 +79,9 @@ const Header = () => {
             aria-label="Toggle Menu"
             className="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5"
           >
-            <span
-              className={`w-6 h-[2px] bg-white transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-[7px]" : ""
-              }`}
-            />
-            <span
-              className={`w-6 h-[2px] bg-white transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`w-6 h-[2px] bg-white transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
-              }`}
-            />
+            <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+            <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`w-6 h-[2px] bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
           </button>
         </div>
       </div>
@@ -114,21 +93,18 @@ const Header = () => {
         }`}
       >
         <div className="px-5 sm:px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((item) => {
+          {NAV_KEYS.map((item) => {
             const active = pathname === item.href;
-
             return (
               <Link
-                key={item.label}
+                key={item.key}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className={`text-sm font-medium transition ${
-                  active
-                    ? "text-[#D6C3A3]"
-                    : "text-white hover:text-[#D6C3A3]"
+                  active ? "text-[#D6C3A3]" : "text-white hover:text-[#D6C3A3]"
                 }`}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             );
           })}
@@ -138,7 +114,7 @@ const Header = () => {
             onClick={() => setMenuOpen(false)}
             className="bg-[#D6C3A3] text-black py-3 rounded-md text-sm font-semibold text-center hover:opacity-90 transition"
           >
-            Contact Us
+            {t("nav.contact")}
           </Link>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">

@@ -221,6 +221,12 @@ export type TermsItem = {
   }[];
 };
 
+export type FaqItem = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
 export function submitContactForm(data: {
   fullName: string;
   email: string;
