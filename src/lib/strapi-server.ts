@@ -108,10 +108,13 @@ export async function getTerms(): Promise<TermsItem[]> {
 }
 
 export async function getFaqs(): Promise<FaqItem[]> {
+  console.log("FAQ fetched fresh from server");
   const res = await strapiFetch<{ data: FaqItem[] } | FaqItem[]>(
     "/faqs",
     await getLocale(),
+    { noCache: true }
   );
+
   if (Array.isArray(res)) return res;
   return (res as { data: FaqItem[] })?.data ?? [];
 }

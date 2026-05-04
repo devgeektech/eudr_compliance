@@ -9,17 +9,21 @@ export function getStrapiMediaURL(url: string | null | undefined): string {
   return `${STRAPI_URL}${url}`;
 }
 
-export async function strapiFetch<T>(endpoint: string, locale: AppLocale): Promise<T> {
+export async function strapiFetch<T>(
+  endpoint: string,
+  locale: AppLocale,
+  options?: { noCache?: boolean }
+): Promise<T> {
   const path = appendLocaleQuery(endpoint, locale);
+
   try {
     const res = await fetch(`${STRAPI_URL}/api${path}`, {
-      next: { revalidate: 60 },
+      cache: options?.noCache ? "no-store" : "force-cache",
     });
 
     if (!res.ok) throw new Error(`API Error: ${res.status}`);
 
     const json = await res.json();
-
     return json as T;
   } catch {
     return {} as T;
