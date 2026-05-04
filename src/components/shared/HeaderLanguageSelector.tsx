@@ -31,11 +31,14 @@ function persistLocale(locale: AppLocale) {
 
 const HeaderLanguageSelector = () => {
   const router = useRouter();
-  const [locale, setLocale] = useState<AppLocale>("en");
+const [locale, setLocale] = useState<AppLocale>(() => {
+  if (typeof document === "undefined") return "en";
+  return readLocaleFromBrowser();
+});
 
-  useEffect(() => {
-    setLocale(readLocaleFromBrowser());
-  }, []);
+  // useEffect(() => {
+  //   setLocale(readLocaleFromBrowser());
+  // }, []);
 
   const selectLocale = (next: AppLocale) => {
     if (next === locale) return;
