@@ -50,7 +50,7 @@ const TheComplianceLedger = () => {
                 <card.icon />
               </div>
 
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center">
+              <div className="absolute inset-0 z-10 flex flex-col items-start justify-center text-white text-left px-6 sm:px-10">
                 <p className="text-xs tracking-[2px] uppercase">
                   {t("ledger.concept")} 0{index + 1}
                 </p>
@@ -59,7 +59,7 @@ const TheComplianceLedger = () => {
                   {card.name}
                 </h3>
                 <p className="text-xs sm:text-sm mt-3 opacity-90">
-  {t("ledger.tagline")}
+  {card.tagline}
 </p>
               </div>
             </div>

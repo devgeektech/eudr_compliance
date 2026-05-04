@@ -17,6 +17,10 @@ export async function strapiFetch<T>(
   const path = appendLocaleQuery(endpoint, locale);
 
   try {
+    
+    console.log("STRAPI_URL",STRAPI_URL);
+    console.log(`Fetching from Strapi: ${STRAPI_URL}/api${path}`);
+    
     const res = await fetch(`${STRAPI_URL}/api${path}`, {
       cache: options?.noCache ? "no-store" : "force-cache",
     });
