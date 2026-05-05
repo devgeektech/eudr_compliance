@@ -76,7 +76,7 @@ const Footer = () => {
 
     {/* Right */}
     <a
-      href="https://www.linkedin.com"
+      href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="hover:opacity-80 transition"
