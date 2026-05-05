@@ -1,12 +1,15 @@
-import PrivacyPolicyPage from '@/src/components/PrivacyPolicy/PrivacyPolicy'
-import React from 'react'
+import React from "react";
+import PrivacyPolicyPage from "@/src/components/PrivacyPolicy/PrivacyPolicy";
+import { getPrivacyPolicies } from "@/src/lib/strapi-server";
 
-const page = () => {
+const Page = async () => {
+  const policies = await getPrivacyPolicies();
+
   return (
     <div>
-      <PrivacyPolicyPage/>
+      <PrivacyPolicyPage policies={policies} />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;

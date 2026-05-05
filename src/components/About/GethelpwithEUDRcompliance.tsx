@@ -8,7 +8,10 @@ const GethelpwithEUDRcompliance = () => {
   const { t } = useTranslation();
 
   const handleAssessment = () => {
-    console.log("Request Initial Assessment clicked");
+    window.open(
+      process.env.NEXT_PUBLIC_GOOGLE_FORM_URL,
+      "_blank"
+    );
   };
 
   const handlePackages = () => {

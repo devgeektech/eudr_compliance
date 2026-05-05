@@ -1,6 +1,7 @@
 import EUDR_LOGO from './EUDR_LOGO.svg'
 import HeaderRightFlag1 from './HeaderRightFlag1.svg'
 import HeaderRightFlag2 from './HeaderRightFlag2.svg'
+import LinkedIn from './LinkedIn.svg'
 import LeftArrow from './LeftArrow.svg'
 import DueDiligenceSupport from './DueDiligenceSupport.svg'
 import RiskAssessment from './RiskAssessment.svg'
@@ -45,4 +46,4 @@ import Location from './Location.svg'
 
 
 
-export { EUDR_LOGO, HeaderRightFlag1, HeaderRightFlag2, LeftArrow, DueDiligenceSupport, RiskAssessment, SupplierDataCollection, InternalProcedures, SupplyChain, EUDRAudit, Exporters, Importers, Traders, Distributors, Manufacturers, WoodFurniture ,DataCollection,Implementation,Documentation,InitialAssessment,RiskEvaluation,SupplyChainAnalysis,RIskIsREalIcon1,RIskIsREalIcon2,RIskIsREalIcon3,RiskIsRealWhite1,RiskIsRealWhite2,RiskIsRealWhite3,Mail,Phone,Location};
+export {LinkedIn, EUDR_LOGO, HeaderRightFlag1, HeaderRightFlag2, LeftArrow, DueDiligenceSupport, RiskAssessment, SupplierDataCollection, InternalProcedures, SupplyChain, EUDRAudit, Exporters, Importers, Traders, Distributors, Manufacturers, WoodFurniture ,DataCollection,Implementation,Documentation,InitialAssessment,RiskEvaluation,SupplyChainAnalysis,RIskIsREalIcon1,RIskIsREalIcon2,RIskIsREalIcon3,RiskIsRealWhite1,RiskIsRealWhite2,RiskIsRealWhite3,Mail,Phone,Location};

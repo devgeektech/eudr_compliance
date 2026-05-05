@@ -145,8 +145,9 @@
 
 "industry.explore.title": "Explore By Industries",
 "industry.explore.desc": "Select your industry to learn how EUDR impacts your business.",
-"common.loading": "Loading..."
+"common.loading": "Loading...",
 
-
+"terms.title": "Terms & Services",
+"privacy.title": "Privacy & Policy"
 
 }

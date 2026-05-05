@@ -1,12 +1,13 @@
-import TermsAndServicesPage from '@/src/components/TermsAndServices/TermsAndServices'
-import React from 'react'
+export const dynamic = "force-dynamic";
 
-const page = () => {
-  return (
-    <div>
-      <TermsAndServicesPage/>
-    </div>
-  )
-}
+import React from "react";
+import { getTerms } from "@/src/lib/strapi-server";
+import TermsAndServicesClient from "@/src/components/TermsAndServices/TermsAndServices";
 
-export default page
+const TermsPage = async () => {
+  const terms = await getTerms();
+
+  return <TermsAndServicesClient terms={terms} />;
+};
+
+export default TermsPage;

@@ -134,12 +134,13 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10">
-              <Link
-                href="/contact"
+              <a 
+                href={process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}
+                target="_blank"
                 className="inline-flex items-center justify-center rounded-full bg-[#1E3D32] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:px-8 sm:text-base"
               >
                 {t("hero.cta1")}
-              </Link>
+              </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-[#D9C5A3] px-7 py-3.5 text-sm font-semibold text-black shadow-sm transition hover:brightness-95 sm:px-8 sm:text-base"

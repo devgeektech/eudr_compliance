@@ -1,6 +1,6 @@
 import React from "react";
 
-type Block = {
+ export type Block = {
   type: string;
   children?: {
     type: string;

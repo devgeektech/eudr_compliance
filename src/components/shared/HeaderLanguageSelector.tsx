@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   HeaderRightFlag1,
@@ -18,7 +18,7 @@ const COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 365;
 function readLocaleFromBrowser(): AppLocale {
   if (typeof document === "undefined") return "en";
   const match = document.cookie.match(
-    new RegExp(`(?:^|;\\s*)${LANGUAGE_COOKIE}=([^;]*)`),
+    new RegExp(`(?:^|;\\s*)${LANGUAGE_COOKIE}=([^;]*)`)
   );
   return localeFromCookieValue(match?.[1]?.trim());
 }
@@ -26,56 +26,79 @@ function readLocaleFromBrowser(): AppLocale {
 function persistLocale(locale: AppLocale) {
   const value = locale === "ro" ? "ro" : "en";
   document.cookie = `${LANGUAGE_COOKIE}=${value}; path=/; max-age=${COOKIE_MAX_AGE_SEC}; SameSite=Lax`;
-  document.documentElement.lang = value === "ro" ? "ro" : "en";
+  document.documentElement.lang = value;
 }
 
 const HeaderLanguageSelector = () => {
   const router = useRouter();
-const [locale, setLocale] = useState<AppLocale>(() => {
-  if (typeof document === "undefined") return "en";
-  return readLocaleFromBrowser();
-});
-
-  // useEffect(() => {
-  //   setLocale(readLocaleFromBrowser());
-  // }, []);
+  const [locale, setLocale] = useState<AppLocale>(() =>
+    readLocaleFromBrowser()
+  );
+  const [open, setOpen] = useState(false);
 
   const selectLocale = (next: AppLocale) => {
-    if (next === locale) return;
+    if (next === locale) {
+      setOpen(false);
+      return;
+    }
+
     persistLocale(next);
     setLocale(next);
     window.dispatchEvent(new CustomEvent(LOCALE_CHANGED_EVENT));
     router.refresh();
+    setOpen(false);
   };
 
+  const current = locale === "ro"
+    ? { label: "Română", Flag: HeaderRightFlag2 }
+    : { label: "English", Flag: HeaderRightFlag1 };
+
   return (
-    <div className="flex items-center gap-2">
+    <div className="relative">
+      {/* Trigger */}
       <button
-        type="button"
-        aria-label="Switch language to English"
-        title="English"
-        onClick={() => selectLocale("en")}
-        className={`cursor-pointer rounded-full transition ${
-          locale === "en"
-            ? "scale-105 ring-2 ring-[#D6C3A3] ring-offset-2 ring-offset-[#1E1E20]"
-            : "opacity-55 saturate-75 hover:opacity-85"
-        }`}
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm"
       >
-        <HeaderRightFlag1 />
+        <current.Flag />
+        <span className="text-sm font-medium text-black">
+          {current.label}
+        </span>
+
+        {/* Arrow */}
+        <svg
+          className={`h-4 w-4 text-black transition ${
+            open ? "rotate-180" : ""
+          }`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
       </button>
-      <button
-        type="button"
-        aria-label="Switch language to Romanian"
-        title="Romana"
-        onClick={() => selectLocale("ro")}
-        className={`cursor-pointer rounded-full transition ${
-          locale === "ro"
-            ? "scale-105 ring-2 ring-[#D6C3A3] ring-offset-2 ring-offset-[#1E1E20]"
-            : "opacity-55 saturate-75 hover:opacity-85"
-        }`}
-      >
-        <HeaderRightFlag2 />
-      </button>
+
+      {/* Dropdown */}
+      {open && (
+        <div className="absolute right-0 mt-2 w-40 rounded-lg bg-white shadow-lg border z-50">
+          <button
+            onClick={() => selectLocale("en")}
+            className="flex w-full items-center gap-2 px-3 py-2 hover:bg-gray-100"
+          >
+            <HeaderRightFlag1 />
+            <span className="text-sm text-black">English</span>
+          </button>
+
+          <button
+            onClick={() => selectLocale("ro")}
+            className="flex w-full items-center gap-2 px-3 py-2 hover:bg-gray-100"
+          >
+            <HeaderRightFlag2 />
+            <span className="text-sm text-black">Română</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

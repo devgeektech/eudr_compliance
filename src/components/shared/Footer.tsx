@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { EUDR_LOGO, Mail, Phone, Location } from "@/public/Home/images/svgs";
 import { useTranslation } from "@/src/hooks/useTranslation";
+import { LinkedIn } from "@/public/Home/images/svgs";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -65,9 +66,26 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-500">
-        {t("footer.copyright")}
-      </div>
+   <div className="border-t border-white/10 mt-12 pt-6">
+  <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white">
+    
+    {/* Left */}
+    <p className="text-center sm:text-left">
+      {t("footer.copyright")}
+    </p>
+
+    {/* Right */}
+    <a
+      href="https://www.linkedin.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:opacity-80 transition"
+    >
+      <LinkedIn className="text-[#BF9655]" />
+    </a>
+
+  </div>
+</div>
     </footer>
   );
 };

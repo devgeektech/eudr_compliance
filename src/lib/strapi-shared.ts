@@ -12,28 +12,48 @@ export function getStrapiMediaURL(url: string | null | undefined): string {
 export async function strapiFetch<T>(
   endpoint: string,
   locale: AppLocale,
-  options?: { noCache?: boolean }
+  options?: { noCache?: boolean; revalidate?: number }
 ): Promise<T> {
   const path = appendLocaleQuery(endpoint, locale);
 
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 60000);
+
   try {
-    
-    console.log("STRAPI_URL",STRAPI_URL);
+    console.log("STRAPI_URL", STRAPI_URL);
     console.log(`Fetching from Strapi: ${STRAPI_URL}/api${path}`);
-    
+
     const res = await fetch(`${STRAPI_URL}/api${path}`, {
       cache: options?.noCache ? "no-store" : "force-cache",
+      next: options?.noCache
+        ? undefined
+        : { revalidate: options?.revalidate ?? 60 },
+      signal: controller.signal,
     });
+
+    clearTimeout(timeout);
 
     if (!res.ok) throw new Error(`API Error: ${res.status}`);
 
     const json = await res.json();
     return json as T;
-  } catch {
+
+  } catch (err: unknown) {
+    clearTimeout(timeout);
+
+    if (err instanceof Error) {
+      if (err.name === "AbortError") {
+        console.error("Strapi fetch timeout (60s)");
+      } else {
+        console.error("Strapi fetch error:", err.message);
+      }
+    } else {
+      console.error("Unknown error:", err);
+    }
+
     return {} as T;
   }
 }
-
 async function postAPI<T>(endpoint: string, body: unknown): Promise<T> {
   try {
     const res = await fetch(`${STRAPI_URL}/api${endpoint}`, {
