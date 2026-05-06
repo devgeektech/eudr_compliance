@@ -5,7 +5,7 @@ import { useTranslation } from "@/src/hooks/useTranslation";
 import { renderBlocks } from "@/src/lib/helpers/renderBlocks";
 import { Block } from "@/src/lib/helpers/renderBlocks";
 
-/* ✅ Define types */
+/* Define types */
 
 
 type PrivacyPolicy = {
@@ -18,7 +18,7 @@ interface Props {
   policies: PrivacyPolicy[];
 }
 
-/* ✅ Use types in component */
+/* Use types in component */
 const PrivacyPolicyPage: React.FC<Props> = ({ policies }) => {
   const { t } = useTranslation();
 

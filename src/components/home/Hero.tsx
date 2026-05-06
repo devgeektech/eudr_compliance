@@ -107,7 +107,7 @@ const Hero = () => {
           type="button"
           onClick={goToPrev}
           aria-label={t("hero.prev")}
-          className="absolute left-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 sm:left-5 md:left-8 lg:left-12"
+          className="absolute  left-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 sm:left-5 md:left-8 lg:left-12"
         >
           <ChevronLeft className="mx-auto size-4 stroke-[2]" stroke="currentColor" />
         </button>
@@ -116,39 +116,46 @@ const Hero = () => {
           type="button"
           onClick={goToNext}
           aria-label={t("hero.next")}
-          className="absolute right-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border-0 bg-[#D9C5A3] text-[#1a1a1a] shadow-none transition hover:bg-[#cab896] focus-visible:ring-2 focus-visible:ring-white/30 sm:right-5 md:right-8 lg:right-12"
+          className="absolute right-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-[#cab896] focus-visible:ring-2 focus-visible:ring-white/30 sm:right-5 md:right-8 lg:right-12"
         >
           <ChevronRight className="mx-auto size-4 stroke-[2]" stroke="currentColor" />
         </button>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-30 flex items-center">
+     <div className="pointer-events-none absolute inset-0 z-30 flex items-center sm:items-center -translate-y-10 sm:translate-y-0">
         <div className="pointer-events-auto mx-auto w-full max-w-[1600px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-[680px] text-white">
-            <h1 className="text-[2rem] font-bold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-              {t("hero.title")}
-            </h1>
+         <div className="max-w-[680px] text-white">
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/95 sm:mt-6 sm:text-lg md:text-xl">
-              {t("hero.subtitle")}
-            </p>
+  {/* TEXT (move up) */}
+  <div className="-translate-y-6 sm:translate-y-0">
+    <h1 className="text-[2rem] font-bold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+      {t("hero.title")}
+    </h1>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10">
-              <a 
-                href={process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}
-                target="_blank"
-                className="inline-flex items-center justify-center rounded-full bg-[#1E3D32] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:px-8 sm:text-base"
-              >
-                {t("hero.cta1")}
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#D9C5A3] px-7 py-3.5 text-sm font-semibold text-black shadow-sm transition hover:brightness-95 sm:px-8 sm:text-base"
-              >
-                {t("hero.cta2")}
-              </Link>
-            </div>
-          </div>
+    <p className="mt-5 max-w-xl text-base leading-relaxed text-white/95 sm:mt-6 sm:text-lg md:text-xl">
+      {t("hero.subtitle")}
+    </p>
+  </div>
+
+  {/* BUTTONS (move down) */}
+  <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4 md:mt-10 translate-y-6 sm:translate-y-0">
+    <a 
+      href={process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}
+      target="_blank"
+      className="inline-flex items-center justify-center rounded-full bg-[#1E3D32] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 sm:px-8 sm:text-base"
+    >
+      {t("hero.cta1")}
+    </a>
+
+    <Link
+      href="/contact"
+      className="inline-flex items-center justify-center rounded-full bg-[#D9C5A3] px-7 py-3.5 text-sm font-semibold text-black shadow-sm transition hover:brightness-95 sm:px-8 sm:text-base"
+    >
+      {t("hero.cta2")}
+    </Link>
+  </div>
+
+</div>
         </div>
       </div>
     </section>
