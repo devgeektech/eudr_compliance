@@ -4,6 +4,7 @@ import Header from "../components/shared/Header";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Footer from "../components/shared/Footer";
+import CookieBanner from "../components/shared/CookieBanner";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white">
         <Header />
         <main className="flex-1">{children}</main>
+        {<CookieBanner/>}
         <Footer/>
       </body>
     </html>

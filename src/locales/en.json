@@ -152,6 +152,13 @@
 
 "mini_CTA.title": "Not sure if your industry is affected?",
     "mini_CTA.description": "Take our quick eligibility check to find out how EUDR impacts your business.",
-    "mini_CTA.button": "Check Eligibility"
+    "mini_CTA.button": "Check Eligibility",
+
+    
+    "cookieBanner.description": "We use cookies to enhance your experience, analyze traffic, and improve our services. Read our",
+    "cookieBanner.privacy": "Privacy Policy",
+    "cookieBanner.accept": "Accept",
+    "cookieBanner.reject": "Reject"
+  
 
 }

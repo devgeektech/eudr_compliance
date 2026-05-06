@@ -154,5 +154,11 @@
 
     "mini_CTA.title": "Nu ești sigur dacă industria ta este afectată?",
     "mini_CTA.description": "Fă testul nostru rapid de eligibilitate pentru a afla cum te afectează EUDR.",
-    "mini_CTA.button": "Verifică eligibilitatea"
+    "mini_CTA.button": "Verifică eligibilitatea",
+
+
+      "cookieBanner.description": "Folosim cookie-uri pentru a îmbunătăți experiența ta, a analiza traficul și a optimiza serviciile noastre. Citește",
+    "cookieBanner.privacy": "Politica de confidențialitate",
+    "cookieBanner.accept": "Acceptă",
+    "cookieBanner.reject": "Respinge"
 }
