@@ -5,7 +5,14 @@ import LastBannerSection from "@/src/components/shared/LastBannerSection";
 
 const StartYourEUDRComplianceJourneyToday = () => {
   const handleRequestInitialAssessment = () => {
-    console.log("Request Initial Assessment clicked");
+    const url = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL;
+
+    if (!url) {
+      console.error("Form URL is not defined in env");
+      return;
+    }
+
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
