@@ -21,11 +21,11 @@ const ReadyToEnsure = () => {
           {t("ready.subtitle")}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
-          <button className="px-6 py-3 rounded-lg bg-[#BF9655] text-white font-medium hover:opacity-90 transition">
+          <button className="px-6 cursor-pointer  py-3 rounded-lg bg-[#BF9655] text-white font-medium hover:opacity-90 transition">
             {t("ready.bookCall")}
           </button>
           <Link href="/contact">
-            <button className="px-6 py-3 rounded-lg bg-white text-[#1E1E20] font-medium hover:bg-gray-100 transition">
+            <button className="px-6  cursor-pointer py-3 rounded-lg bg-white text-[#1E1E20] font-medium hover:bg-gray-100 transition">
               {t("ready.contact")}
             </button>
           </Link>

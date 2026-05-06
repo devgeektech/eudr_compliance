@@ -107,7 +107,7 @@ const Hero = () => {
           type="button"
           onClick={goToPrev}
           aria-label={t("hero.prev")}
-          className="absolute  left-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 sm:left-5 md:left-8 lg:left-12"
+          className="absolute  left-3 cursor-pointer top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/40 sm:left-5 md:left-8 lg:left-12"
         >
           <ChevronLeft className="mx-auto size-4 stroke-[2]" stroke="currentColor" />
         </button>
@@ -116,7 +116,7 @@ const Hero = () => {
           type="button"
           onClick={goToNext}
           aria-label={t("hero.next")}
-          className="absolute right-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-[#cab896] focus-visible:ring-2 focus-visible:ring-white/30 sm:right-5 md:right-8 lg:right-12"
+          className="absolute cursor-pointer right-3 top-1/2 z-20 size-10 -translate-y-1/2 rounded-full border border-white/85 bg-transparent text-white shadow-none transition hover:bg-[#cab896] focus-visible:ring-2 focus-visible:ring-white/30 sm:right-5 md:right-8 lg:right-12"
         >
           <ChevronRight className="mx-auto size-4 stroke-[2]" stroke="currentColor" />
         </button>

@@ -148,7 +148,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={!form.agree}
-          className={`w-full rounded-xl px-8 py-4 text-sm font-semibold text-white transition ${
+          className={`w-full cursor-pointer rounded-xl px-8 py-4 text-sm font-semibold text-white transition ${
             form.agree ? "bg-[#BF9655] hover:opacity-90" : "bg-[#BF9655]/40 cursor-not-allowed"
           }`}
         >

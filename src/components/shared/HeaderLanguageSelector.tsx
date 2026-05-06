@@ -58,7 +58,7 @@ const HeaderLanguageSelector = () => {
       {/* Trigger */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 rounded-lg bg-white px-3 py-2 shadow-sm"
+        className="flex items-center gap-2 cursor-pointer rounded-lg bg-white px-3 py-2 shadow-sm"
       >
         <current.Flag />
         <span className="text-sm font-medium text-black">
@@ -84,18 +84,18 @@ const HeaderLanguageSelector = () => {
         <div className="absolute right-0 mt-2 w-40 rounded-lg bg-white shadow-lg border z-50">
           <button
             onClick={() => selectLocale("en")}
-            className="flex w-full items-center gap-2 px-3 py-2 hover:bg-gray-100"
+            className="flex w-full cursor-pointer items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-lg"
           >
             <HeaderRightFlag1 />
-            <span className="text-sm text-black">English</span>
+            <span className="text-sm text-black cursor-pointer">English</span>
           </button>
 
           <button
             onClick={() => selectLocale("ro")}
-            className="flex w-full items-center gap-2 px-3 py-2 hover:bg-gray-100"
+            className="flex w-full cursor-pointer items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-lg"
           >
             <HeaderRightFlag2 />
-            <span className="text-sm text-black">Română</span>
+            <span className="text-sm text-black cursor-pointer">Română</span>
           </button>
         </div>
       )}

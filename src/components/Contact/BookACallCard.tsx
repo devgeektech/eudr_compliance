@@ -29,7 +29,7 @@ const BookACallCard = () => {
         </li>
       </ul>
 
-      <button className="mt-6 w-full bg-[#F0F3F1] text-[#BF9655] flex items-center justify-center gap-2 py-3 rounded-lg font-medium hover:opacity-90 transition">
+      <button className="mt-6 w-full cursor-pointer bg-[#F0F3F1] text-[#BF9655] flex items-center justify-center gap-2 py-3 rounded-lg font-medium hover:opacity-90 transition">
         <Schedule />
         {t("bookCall.button")}
       </button>

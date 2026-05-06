@@ -150,5 +150,9 @@
 "common.loading": "Se încarcă...",
 
 "terms.title": "Termeni și Condiții",
-"privacy.title": "Politica de Confidențialitate"
+"privacy.title": "Politica de Confidențialitate",
+
+    "mini_CTA.title": "Nu ești sigur dacă industria ta este afectată?",
+    "mini_CTA.description": "Fă testul nostru rapid de eligibilitate pentru a afla cum te afectează EUDR.",
+    "mini_CTA.button": "Verifică eligibilitatea"
 }

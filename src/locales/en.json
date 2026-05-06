@@ -148,6 +148,10 @@
 "common.loading": "Loading...",
 
 "terms.title": "Terms & Services",
-"privacy.title": "Privacy & Policy"
+"privacy.title": "Privacy & Policy",
+
+"mini_CTA.title": "Not sure if your industry is affected?",
+    "mini_CTA.description": "Take our quick eligibility check to find out how EUDR impacts your business.",
+    "mini_CTA.button": "Check Eligibility"
 
 }

@@ -34,7 +34,7 @@ const LastBannerSection = ({
       return (
         <a
           href={button.href}
-          className={`px-6 md:px-8 h-12 rounded-full flex items-center justify-center font-medium text-sm md:text-base transition-all duration-300 hover:scale-[1.03] ${bgClass} ${textClass}`}
+          className={`px-6 cursor-pointer md:px-8 h-12 rounded-full flex items-center justify-center font-medium text-sm md:text-base transition-all duration-300 hover:scale-[1.03] ${bgClass} ${textClass}`}
         >
           {button.label}
         </a>
@@ -44,7 +44,7 @@ const LastBannerSection = ({
     return (
       <button
         onClick={button.onClick}
-        className={`px-6 md:px-8 h-12 rounded-full flex items-center justify-center font-medium text-sm md:text-base transition-all duration-300 hover:scale-[1.03] ${bgClass} ${textClass}`}
+        className={`px-6 md:px-8 h-12 cursor-pointer rounded-full flex items-center justify-center font-medium text-sm md:text-base transition-all duration-300 hover:scale-[1.03] ${bgClass} ${textClass}`}
       >
         {button.label}
       </button>

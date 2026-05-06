@@ -36,6 +36,7 @@ const FaqAccordion = ({ data = [] }: Props) => {
           <button
             onClick={() => toggle(index)}
             className="
+            cursor-pointer
               w-full
               px-6
               py-5
@@ -60,7 +61,7 @@ const FaqAccordion = ({ data = [] }: Props) => {
           {/* Answer */}
           <div
             className={`
-              overflow-hidden transition-all duration-300
+              overflow-hidden transition-all duration-300 
               ${
                 openIndex === index
                   ? "max-h-40 opacity-100"
