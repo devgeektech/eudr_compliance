@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: "EUDR compliance consulting and solutions",
     url: "https://eudrcompliancehub.com",
     siteName: "EUDR Compliance Hub",
+    
     images: [
       {
         url: "/eudrLogo.png",
@@ -27,6 +28,9 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
+  },
+   icons: {
+    icon: "/favicon.png",
   },
 
   twitter: {
