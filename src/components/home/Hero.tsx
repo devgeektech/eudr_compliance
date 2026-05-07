@@ -120,8 +120,7 @@ const Hero = () => {
           type="button"
           onClick={goToPrev}
           aria-label={t("hero.prev")}
-          className="absolute left-3 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full border border-white/85 text-white hover:bg-[#cab896]  sm:left-5 md:left-8 lg:left-12"
-        >
+className="absolute left-3 top-[43%] sm:top-[48%] lg:top-1/2 z-20 -translate-y-1/2 size-10 rounded-full border border-white/85 text-white hover:bg-[#cab896] sm:left-5 md:left-8 lg:left-12"       >
           <ChevronLeft className="mx-auto size-4" />
         </button>
 
@@ -130,7 +129,7 @@ const Hero = () => {
           type="button"
           onClick={goToNext}
           aria-label={t("hero.next")}
-          className="absolute right-3 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full border border-white/85 text-white hover:bg-[#cab896] sm:right-5 md:right-8 lg:right-12"
+          className="absolute right-3 top-[43%] sm:top-[48%] lg:top-1/2 z-20 -translate-y-1/2 size-10 rounded-full border border-white/85 text-white hover:bg-[#cab896] sm:right-5 md:right-8 lg:right-12"
         >
           <ChevronRight className="mx-auto size-4" />
         </button>
@@ -139,17 +138,16 @@ const Hero = () => {
       {/* CONTENT */}
       <div className="pointer-events-none absolute inset-0 z-30 flex items-center">
         <div className="pointer-events-none mx-auto w-full max-w-[1600px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-[680px] text-white">
+          <div className="max-w-[680px] text-white ">
 
-            <h1 className="text-[2rem] font-bold sm:text-4xl md:text-5xl lg:text-[3.25rem]">
-              {t("hero.title")}
-            </h1>
+           <h1 className="text-[2rem] font-bold leading-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+  {t("hero.title")}
+</h1>
 
-            <p className="mt-5 text-base sm:text-lg md:text-xl text-white/95">
-              {t("hero.subtitle")}
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
+<p className="mt-12 sm:mt-5 text-base sm:text-lg md:text-xl text-white/95">
+  {t("hero.subtitle")}
+</p>
+         <div className="mt-12 sm:mt-10 flex flex-wrap gap-4">
               <a
                 href={process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}
                 target="_blank"
