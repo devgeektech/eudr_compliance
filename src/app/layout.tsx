@@ -9,8 +9,29 @@ import CookieBanner from "../components/shared/CookieBanner";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "EUDR",
-  description: "EUDR Website",
+  metadataBase: new URL("https://eudrcompliancehub.com"),
+
+  title: "EUDR Compliance Hub",
+  description: "EUDR compliance consulting and solutions",
+
+  openGraph: {
+    title: "EUDR Compliance Hub",
+    description: "EUDR compliance consulting and solutions",
+    url: "https://eudrcompliancehub.com",
+    siteName: "EUDR Compliance Hub",
+    images: [
+      {
+        url: "/eudrLogo.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
