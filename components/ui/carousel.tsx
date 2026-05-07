@@ -136,7 +136,11 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   const { carouselRef, orientation } = useCarousel()
 
   return (
-   <div ref={carouselRef} className="overflow-hidden bg-transparent">
+   <div
+  ref={carouselRef}
+  className="overflow-hidden bg-transparent touch-pan-y"
+  style={{ touchAction: "pan-y" }}
+>
       <div
         className={cn(
     "flex",
@@ -161,8 +165,8 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       role="group"
       aria-roledescription="slide"
       data-slot="carousel-item"
-      className={cn(
-  "min-w-0 shrink-0 grow-0 basis-full flex-[0_0_100%] bg-transparent transform-gpu",
+   className={cn(
+  "min-w-0 shrink-0 grow-0 basis-full pointer-events-none",
   className
 )}
       {...props}

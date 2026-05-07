@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eudrcompliancehub.com"),
 
   title: "EUDR Compliance Hub",
-  description: "EUDR compliance consulting and solutions",
+  description:
+  "Expert EUDR consulting and compliance solutions for businesses navigating EUDR regulations and due diligence requirements.",
 
   openGraph: {
     title: "EUDR Compliance Hub",

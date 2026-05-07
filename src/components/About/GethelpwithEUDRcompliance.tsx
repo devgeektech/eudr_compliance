@@ -5,13 +5,15 @@ import LastBannerSection from "@/src/components/shared/LastBannerSection";
 import { useTranslation } from "@/src/hooks/useTranslation";
 
 const GethelpwithEUDRcompliance = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   const handleAssessment = () => {
-    window.open(
-      process.env.NEXT_PUBLIC_GOOGLE_FORM_URL,
-      "_blank"
-    );
+    const url =
+      locale === "ro"
+        ? process.env.NEXT_PUBLIC_GOOGLE_FORM_URL_RO
+        : process.env.NEXT_PUBLIC_GOOGLE_FORM_URL_EN;
+
+    window.open(url, "_blank");
   };
 
   const handlePackages = () => {

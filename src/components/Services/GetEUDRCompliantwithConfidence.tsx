@@ -5,13 +5,20 @@ import LastBannerSection from "@/src/components/shared/LastBannerSection";
 import { useTranslation } from "@/src/hooks/useTranslation";
 
 const GetEUDRCompliantwithConfidence = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   const handleRequestInitialAssessment = () => {
-    window.open(
-      process.env.NEXT_PUBLIC_GOOGLE_FORM_URL,
-      "_blank"
-    );
+    const url =
+      locale === "ro"
+        ? process.env.NEXT_PUBLIC_GOOGLE_FORM_URL_RO
+        : process.env.NEXT_PUBLIC_GOOGLE_FORM_URL_EN;
+
+    if (!url) {
+      console.error("Google Form URL is not defined in env");
+      return;
+    }
+
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handleViewIndustryGuides = () => {

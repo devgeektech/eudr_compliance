@@ -10,6 +10,7 @@ import HeroImage from "@/public/Home/images/Hero Section.jpg";
 import HeroImage2 from "@/public/Home/images/Hero_Banner-1.jpg";
 import HeroImage3 from "@/public/Home/images/Hero_Banner-2.jpg";
 
+
 const slides = [HeroImage, HeroImage2, HeroImage3];
 const SLIDE_DELAY_MS = 8000;
 const TRANSITION_MS = 1200;
@@ -23,7 +24,7 @@ const Hero = () => {
   const transitionTimerRef = useRef<number | null>(null);
   const frameRef = useRef<number | null>(null);
 
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   // ✅ FIXED transition logic (no ref desync)
   const transitionBy = useCallback((step: number) => {
@@ -97,7 +98,7 @@ const Hero = () => {
           return (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${slideClass}`}
+              className={`absolute inset-0  transition-opacity duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${slideClass}`}
             >
               <Image
                 src={img}
@@ -115,8 +116,7 @@ const Hero = () => {
           );
         })}
 
-        {/* PREV */}
-        <button
+        {/* <button
           type="button"
           onClick={goToPrev}
           aria-label={t("hero.prev")}
@@ -124,7 +124,7 @@ className="absolute left-3 top-[43%] sm:top-[48%] lg:top-1/2 z-20 -translate-y-1
           <ChevronLeft className="mx-auto size-4" />
         </button>
 
-        {/* NEXT */}
+        
         <button
           type="button"
           onClick={goToNext}
@@ -132,12 +132,12 @@ className="absolute left-3 top-[43%] sm:top-[48%] lg:top-1/2 z-20 -translate-y-1
           className="absolute right-3 top-[43%] sm:top-[48%] lg:top-1/2 z-20 -translate-y-1/2 size-10 rounded-full border border-white/85 text-white hover:bg-[#cab896] sm:right-5 md:right-8 lg:right-12"
         >
           <ChevronRight className="mx-auto size-4" />
-        </button>
+        </button> */}
       </div>
 
       {/* CONTENT */}
-      <div className="pointer-events-none absolute inset-0 z-30 flex items-center">
-        <div className="pointer-events-none mx-auto w-full max-w-[1600px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
+      <div className=" absolute inset-0 z-30 flex items-center">
+        <div className=" mx-auto w-full max-w-[1600px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
           <div className="max-w-[680px] text-white ">
 
            <h1 className="text-[2rem] font-bold leading-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
@@ -149,7 +149,11 @@ className="absolute left-3 top-[43%] sm:top-[48%] lg:top-1/2 z-20 -translate-y-1
 </p>
          <div className="mt-12 sm:mt-10 flex flex-wrap gap-4">
               <a
-                href={process.env.NEXT_PUBLIC_GOOGLE_FORM_URL}
+                href={
+                  locale === "ro"
+                    ? process.env.NEXT_PUBLIC_GOOGLE_FORM_URL_RO
+                    : process.env.NEXT_PUBLIC_GOOGLE_FORM_URL_EN
+                }
                 target="_blank"
                 className="rounded-full bg-[#1E3D32] px-7 py-3.5 text-white"
               >

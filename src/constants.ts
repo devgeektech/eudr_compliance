@@ -547,7 +547,7 @@ export const risksOfNonCompliance_ro = [
 // implementation timeline data
 // ==============================
 
-export const implementationTimeline = [
+export const implementationTimelineEN = [
   {
     id: 1,
     number: "1",
@@ -582,6 +582,40 @@ export const implementationTimeline = [
   },
 ];
 
+export const implementationTimelineRO = [
+  {
+    id: 1,
+    number: "1",
+    date: "Iunie 2023",
+    title: "Regulamentul a intrat în vigoare",
+    description:
+      "Adoptarea oficială a textului de către Parlamentul European.",
+  },
+  {
+    id: 2,
+    number: "2",
+    date: "Începutul anului 2024",
+    title: "Faza de pregătire",
+    description:
+      "Companiile încep auditarea lanțurilor de aprovizionare și cartografierea fermelor.",
+  },
+  {
+    id: 3,
+    number: "3",
+    date: "Sfârșitul anului 2024",
+    title: "Aplicare completă",
+    description:
+      "Marile companii trebuie să respecte toate cerințele de diligență.",
+  },
+  {
+    id: 4,
+    number: "4",
+    date: "Iunie 2025",
+    title: "Aplicare pentru IMM-uri",
+    description:
+      "Cerințele de conformitate se extind la întreprinderile mici și mijlocii.",
+  },
+];
 
 
 // ==========================================
@@ -862,11 +896,11 @@ import ResponseIcon from "@/public/Contact/images/svgs/ResponseIcon.svg";
 import ExpertConsultationIcon from "@/public/Contact/images/svgs/ExpertConsultationIcon.svg";
 import ConfidentialDiscussion from "@/public/Contact/images/svgs/ConfidentialDiscussion.svg";
 
-export const whyChooseUsData = [
+export const whyChooseUsDataEN = [
   {
     id: 1,
     icon: ResponseIcon,
-    title: "Response with in 24 hours",
+    title: "Response within 24 hours",
     description:
       "We prioritize every inquiry and guarantee a response within one business day.",
   },
@@ -883,6 +917,30 @@ export const whyChooseUsData = [
     title: "Confidential Discussion",
     description:
       "All consultations are strictly confidential. Your business information is safe with us.",
+  },
+];
+
+export const whyChooseUsDataRO = [
+  {
+    id: 1,
+    icon: ResponseIcon,
+    title: "Răspuns în 24 de ore",
+    description:
+      "Prioritizăm fiecare solicitare și garantăm un răspuns în maximum o zi lucrătoare.",
+  },
+  {
+    id: 2,
+    icon: ExpertConsultationIcon,
+    title: "Consultanță de experți",
+    description:
+      "Echipa noastră este formată din specialiști certificați în conformitatea EUDR cu experiență profundă în industrie.",
+  },
+  {
+    id: 3,
+    icon: ConfidentialDiscussion,
+    title: "Discuții confidențiale",
+    description:
+      "Toate consultările sunt strict confidențiale. Informațiile dvs. sunt în siguranță.",
   },
 ];
 

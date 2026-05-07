@@ -116,6 +116,9 @@
 "ledger.concept": "Concept",
 "ledger.tagline": "Know before you sell",
 
+  "implementationTimeline.title": "Implementation Timeline",
+  "implementationTimeline.subtitle": "Step-by-step timeline for implementing EUDR requirements",
+
 "riskSection.title": "Risks of Non-Compliance",
 "riskSection.subtitle": "Failure to comply with EUDR carries significant legal and financial consequences.",
 
