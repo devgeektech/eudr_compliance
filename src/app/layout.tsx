@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   title: "EUDR Compliance Hub",
   description:
   "Expert EUDR consulting and compliance solutions for businesses navigating EUDR regulations and due diligence requirements.",
-
+   
+   keywords: [
+    "EUDR Compliance",
+    "EUDR Consulting",
+    "EUDR România",
+    "legislație EUDR România",
+  ],
   openGraph: {
     title: "EUDR Compliance Hub",
     description: "EUDR compliance consulting and solutions",
