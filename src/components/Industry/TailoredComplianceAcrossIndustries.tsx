@@ -7,16 +7,16 @@ const TailoredComplianceAcrossIndustries = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full bg-[#1A1A1C] py-16 md:py-20 lg:py-24">
-      <div className="w-full max-w-[75%] mx-auto px-4 text-center">
+    <section className="w-full bg-[#1A1A1C] py-10 sm:py-14 md:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24 text-center">
         
         {/* Title */}
-        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+        <h2 className="mx-auto max-w-[1000px] text-xl font-semibold leading-snug text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {t("industry.tailored.title")}
         </h2>
 
         {/* Description */}
-        <p className="mt-6 max-w-[980px] mx-auto text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
+        <p className="mx-auto mt-4 max-w-[980px] text-xs leading-relaxed text-white/80 sm:mt-5 sm:text-sm md:mt-6 md:text-base lg:text-lg">
           {t("industry.tailored.desc")}
         </p>
 

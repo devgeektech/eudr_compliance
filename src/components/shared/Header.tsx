@@ -88,10 +88,12 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed left-0 right-0 top-[78px] sm:top-[85px] bg-[#1E1E20] border-t border-white/10 transition-all duration-300 overflow-visible ${
-          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
+  className={`lg:hidden fixed left-0 right-0 top-[78px] sm:top-[85px] bg-[#1E1E20] border-t border-white/10 transition-all duration-300 overflow-hidden ${
+    menuOpen
+      ? "max-h-screen opacity-100 pointer-events-auto"
+      : "max-h-0 opacity-0 pointer-events-none"
+  }`}
+>
         <div className="px-5 sm:px-6 py-6 flex flex-col gap-5">
           {NAV_KEYS.map((item) => {
             const active = pathname === item.href;
