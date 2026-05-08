@@ -8,7 +8,9 @@ import ro from "@/src/locales/ro.json";
 const dictionaries: Record<AppLocale, Record<string, string>> = { en, ro };
 
 export function useTranslation() {
-  const [locale, setLocale] = useState<AppLocale>("ro");
+  const [locale, setLocale] = useState<AppLocale>(
+  localeFromDocumentCookie()
+);
 
 useEffect(() => {
   const handleChange = () => setLocale(localeFromDocumentCookie());
