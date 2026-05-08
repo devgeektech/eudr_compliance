@@ -36,7 +36,7 @@ const TheComplianceLedger = () => {
             className="flex flex-col lg:flex-row w-full max-w-6xl rounded-2xl overflow-hidden shadow-lg bg-[#111113]"
           >
             {/* IMAGE */}
-            <div className="relative w-full lg:w-1/2 h-[320px] sm:h-[380px] lg:h-[430px] group overflow-hidden">
+            <div className="relative w-full lg:w-1/2 min-h-[320px] sm:min-h-[380px] lg:min-h-full group overflow-hidden">
               <Image
                 src={card.bg}
                 alt="background"

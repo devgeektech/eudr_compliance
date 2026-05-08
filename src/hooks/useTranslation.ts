@@ -8,15 +8,13 @@ import ro from "@/src/locales/ro.json";
 const dictionaries: Record<AppLocale, Record<string, string>> = { en, ro };
 
 export function useTranslation() {
-  const [locale, setLocale] = useState<AppLocale>("en");
+  const [locale, setLocale] = useState<AppLocale>("ro");
 
-  useEffect(() => {
-    setLocale(localeFromDocumentCookie());
-
-    const handleChange = () => setLocale(localeFromDocumentCookie());
-    window.addEventListener(LOCALE_CHANGED_EVENT, handleChange);
-    return () => window.removeEventListener(LOCALE_CHANGED_EVENT, handleChange);
-  }, []);
+useEffect(() => {
+  const handleChange = () => setLocale(localeFromDocumentCookie());
+  window.addEventListener(LOCALE_CHANGED_EVENT, handleChange);
+  return () => window.removeEventListener(LOCALE_CHANGED_EVENT, handleChange);
+}, []);
 
   const t = useCallback(
     (key: string): string => dictionaries[locale][key] ?? key,

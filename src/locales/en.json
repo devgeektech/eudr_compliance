@@ -81,7 +81,7 @@
   "contactForm.message": "Message",
   "contactForm.messagePlaceholder": "Write your message here...",
   "contactForm.agree": "I agree to the privacy policy and consent to being contacted regarding my inquiry.",
-  "contactForm.submit": "Submit Inquiry",
+  "contactForm.submit": "Send message",
   "contactForm.successMsg": "Your message has been sent successfully!",
   "contactForm.errorFields": "Please fill in all fields.",
   "contactForm.errorPolicy": "Please accept the privacy policy.",
@@ -141,7 +141,7 @@
 "page.services": "Services",
 "page.contact": "Contact Us",
 "page.faq": "Frequently Asked Questions",
-"page.industries": "Industries",
+"page.industries": "Industry",
 
 "industry.tailored.title": "Tailored Compliance Across Industries",
 "industry.tailored.desc": "Our consulting services are tailored to support businesses across key industries impacted by EUDR. We help you understand requirements, manage risks, and implement compliance systems — so you can focus on growing your business with confidence.",

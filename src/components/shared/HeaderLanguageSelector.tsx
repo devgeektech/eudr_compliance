@@ -16,12 +16,14 @@ import {
 const COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 365;
 
 function readLocaleFromBrowser(): AppLocale {
-  if (typeof document === "undefined") return "en";
+  if (typeof document === "undefined") return "ro";
   const match = document.cookie.match(
     new RegExp(`(?:^|;\\s*)${LANGUAGE_COOKIE}=([^;]*)`)
   );
-  return localeFromCookieValue(match?.[1]?.trim());
+  return localeFromCookieValue(match?.[1]?.trim()|| "ro");
 }
+
+
 
 function persistLocale(locale: AppLocale) {
   const value = locale === "ro" ? "ro" : "en";

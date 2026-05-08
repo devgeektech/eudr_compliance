@@ -81,7 +81,7 @@
   "contactForm.message": "Mesaj",
   "contactForm.messagePlaceholder": "Scrieți mesajul dvs. aici...",
   "contactForm.agree": "Sunt de acord cu politica de confidențialitate și consimț să fiu contactat în legătură cu solicitarea mea.",
-  "contactForm.submit": "Trimiteți Solicitarea",
+  "contactForm.submit": "Trimite Mesaj",
   "contactForm.successMsg": "Mesajul dvs. a fost trimis cu succes!",
   "contactForm.errorFields": "Vă rugăm să completați toate câmpurile.",
   "contactForm.errorPolicy": "Vă rugăm să acceptați politica de confidențialitate.",
@@ -142,7 +142,7 @@
 "page.services": "Servicii",
 "page.contact": "Contactează-ne",
 "page.faq": "Întrebări Frecvente",
-"page.industries": "Industrii",
+"page.industries": "Industrie",
 
 "industry.tailored.title": "Conformitate Adaptată pentru Diverse Industrii",
 "industry.tailored.desc": "Serviciile noastre de consultanță sunt adaptate pentru a sprijini companiile din industriile cheie afectate de EUDR. Vă ajutăm să înțelegeți cerințele, să gestionați riscurile și să implementați sisteme de conformitate — astfel încât să vă puteți concentra pe dezvoltarea afacerii cu încredere.",
