@@ -11,19 +11,26 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 export const metadata: Metadata = {
   metadataBase: new URL("https://eudrcompliancehub.com"),
 
-  title: "EUDR Compliance Hub",
+  title: "EUDR Compliance Consulting & Due Diligence Solutions | EUDR Compliance Hub",
   description:
-  "Expert EUDR consulting and compliance solutions for businesses navigating EUDR regulations and due diligence requirements.",
+  "Expert EUDR consulting, due diligence, traceability, risk assessment, and compliance solutions for businesses navigating EU Deforestation Regulation requirements.",
    
    keywords: [
-    "EUDR Compliance",
-    "EUDR Consulting",
+    "EUDR compliance",
+    "EUDR consulting",
+    "EUDR consultant",
+    "EUDR due diligence",
+    "EUDR traceability",
+    "EUDR risk assessment",
+    "EU deforestation regulation",
+    "EUDR services",
+    "EUDR compliance solutions",
     "EUDR România",
     "legislație EUDR România",
   ],
   openGraph: {
-    title: "EUDR Compliance Hub",
-    description: "EUDR compliance consulting and solutions",
+    title: "EUDR Compliance Consulting & Due Diligence Solutions | EUDR Compliance Hub",
+    description: "Expert EUDR consulting and compliance solutions for businesses navigating EU Deforestation Regulation requirements.",
     url: "https://eudrcompliancehub.com",
     siteName: "EUDR Compliance Hub",
     
