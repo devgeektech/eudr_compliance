@@ -54,11 +54,11 @@ const Footer = () => {
             </div>
             <div className="flex items-start gap-3">
               <Phone className="text-[#BF9655] mt-0.5" />
-              <span>+40 123 456 789</span>
+              <span>+40 752 212 832</span>
             </div>
             <div className="flex items-start gap-3">
               <Location className="text-[#BF9655] mt-0.5" />
-              <span>Piatra Neamt, Timisoara, Romania</span>
+              <span>Orăștie, Hunedoara, Romania</span>
             </div>
           </div>
         </div>

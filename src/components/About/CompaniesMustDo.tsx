@@ -1,20 +1,23 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { getStrapiMediaURL, type CompaniesMustDoCardItem } from "@/src/lib/strapi";
 import { getIconComponent } from "@/src/lib/iconMap";
+import { useTranslation } from "@/src/hooks/useTranslation";
 
 type Props = {
   items: CompaniesMustDoCardItem[];
 };
 
 const CompaniesMustDo = ({ items }: Props) => {
+  const { t } = useTranslation();
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-[#303032]">
       <div className="max-w-[1500px] mx-auto">
         <div className="text-center max-w-[850px] mx-auto mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-5">Companies Must Do</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-5"> {t("companiesMustDo.title")}</h2>
           <p className="text-white text-lg md:text-xl leading-8">
-            Key requirements your business must follow to comply with EUDR regulations
+            {t("companiesMustDo.subtitle")}
           </p>
         </div>
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"> {items.map((item) => {

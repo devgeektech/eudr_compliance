@@ -22,7 +22,7 @@
 
   "hero.title": "Conformitatea EUDR Simplificată pentru Afacerea Ta",
   "hero.subtitle": "Îndrumare de specialitate și suport complet de due-diligence pentru a vă asigura că produsele dvs. îndeplinesc toate cerințele Regulamentului UE privind Defrișarea (EUDR).",
-  "hero.cta1": "Obțineți o Evaluare Gratuită",
+  "hero.cta1": "Obțineți o evaluare gratuită",
   "hero.cta2": "Contactează-ne",
   "hero.prev": "Diapozitivul anterior",
   "hero.next": "Diapozitivul următor",
@@ -45,9 +45,9 @@
   "products.title": "Produse Acoperite de EUDR",
   "products.subtitle": "Regulamentul acoperă șapte grupe cheie de mărfuri legate de defrișare.",
 
-  "ready.title": "Pregătit să asigurați conformitatea EUDR?",
+  "ready.title": " Sunteti pregatit sa asigurati conformitatea EUDR?",
   "ready.subtitle": "Programați o evaluare gratuită astăzi și faceți primul pas spre operațiuni fără riscuri.",
-  "ready.bookCall": "Programează un Apel",
+  "ready.bookCall": "Programeaza un apel",
   "ready.contact": "Contactează-ne",
 
   "risk.title": "Riscul Este Real",
@@ -108,8 +108,8 @@
 "about.highlight": "EUDR este una dintre cele mai importante reglementări comerciale de mediu, influențând lanțurile globale de aprovizionare.",
 
  "sustain.title": "Susținerea Comerțului Sustenabil",
-  "sustain.p1": "Suntem o firmă de consultanță de elită dedicată exclusiv conformității cu Regulamentul UE privind Defrișarea (EUDR).",
-  "sustain.p2": "Expertiza noastră aprofundată ne permite să oferim suport complet pentru conformitate, strategii solide de reducere a riscurilor și o transparență excepțională a lanțului de aprovizionare. Simplificăm cerințele complexe de reglementare în sisteme acționabile și scalabile pentru afaceri globale.",
+  "sustain.p1": "Suntem o firmă de consultanță dedicată exclusiv conformității cu Regulamentul UE privind Defrișarea (EUDR).",
+  "sustain.p2": "Expertiza noastră ne permite să oferim suport complet pentru conformitate, strategii solide de reducere a riscurilor și o transparență excepțională a lanțului de aprovizionare.",
 
   "ledger.title": "Registrul de Conformitate",
 "ledger.subtitle": "Gestionați toate datele de conformitate EUDR într-un singur loc",
@@ -117,45 +117,48 @@
 "ledger.tagline": "Cunoaște înainte să vinzi",
 
 "implementationTimeline.title": "Timoul de Implementare",
-"implementationTimeline.subtitle": "Timoul de implementare pentru cerințele EUDR",  
+"implementationTimeline.subtitle": "Timpul de implementare -Timpul de implementare pentru cerintele EUDR",  
 
 "riskSection.title": "Riscurile Neconformității",
 "riskSection.subtitle": "Nerespectarea EUDR implică consecințe legale și financiare semnificative.",
 
-"eudrHelp.title": "Obține Ajutor pentru Conformitatea EUDR",
+"eudrHelp.title": "Obține ajutor pentru conformitatea EUDR",
 "eudrHelp.description": "Nu naviga singur complexitatea. Consultanții noștri și instrumentele digitale de audit asigură că lanțul tău de aprovizionare este pregătit pentru viitor.",
 "eudrHelp.primaryBtn": "Solicită Evaluare Inițială",
 "eudrHelp.secondaryBtn": "Vezi Pachete de Conformitate",
 
 
-"cta2.title": "Respectă EUDR cu Încredere",
+"cta2.title": "Respectă EUDR cu incredere",
 "cta2.description": "Ajutăm companiile din diverse industrii să implementeze cerințele EUDR eficient. Începe astăzi călătoria ta de conformitate cu sprijinul experților.",
 "cta2.primary": "Solicită Evaluare Inițială",
 "cta2.secondary": "Vezi Ghiduri Industriale",
 
-"cta3.title": "Mai aveți întrebări?",
+"cta3.title": "Mai aveți intrebări?",
 "cta3.description": "Nu găsiți răspunsul pe care îl căutați? Echipa noastră de experți este gata să vă ajute să navigați complexitatea EUDR.",
 "cta3.primary": "Contactează-ne",
 "cta3.secondary": "Programează un Apel",
 
-"page.about": "Despre Noi",
+"companiesMustDo.title": "Ce Trebuie Să Facă Companiile",
+"companiesMustDo.subtitle": "Cerințele cheie pe care afacerea dvs. trebuie să le respecte pentru a se conforma cu reglementările EUDR",
+
+"page.about": "Despre EUDR",
 "page.services": "Servicii",
-"page.contact": "Contactează-ne",
+"page.contact": "Contactează-ne!",
 "page.faq": "Întrebări Frecvente",
 "page.industries": "Industrie",
 
-"industry.tailored.title": "Conformitate Adaptată pentru Diverse Industrii",
+"industry.tailored.title": "Servicii de Consultanță",
 "industry.tailored.desc": "Serviciile noastre de consultanță sunt adaptate pentru a sprijini companiile din industriile cheie afectate de EUDR. Vă ajutăm să înțelegeți cerințele, să gestionați riscurile și să implementați sisteme de conformitate — astfel încât să vă puteți concentra pe dezvoltarea afacerii cu încredere.",
 
 
-"industry.explore.title": "Explorează Industriile",
-"industry.explore.desc": "Selectați industria dvs. pentru a afla cum EUDR vă afectează afacerea.",
+"industry.explore.title": "Domenii de Activitate",
+"industry.explore.desc": "Selectați domeniul dvs. pentru a afla cum EUDR vă afectează afacerea.",
 "common.loading": "Se încarcă...",
 
 "terms.title": "Termeni și Condiții",
 "privacy.title": "Politica de Confidențialitate",
 
-    "mini_CTA.title": "Nu ești sigur dacă industria ta este afectată?",
+    "mini_CTA.title": "Nu sunteți sigur dacă afacerea dumneavoastră este afectată?",
     "mini_CTA.description": "Fă testul nostru rapid de eligibilitate pentru a afla cum te afectează EUDR.",
     "mini_CTA.button": "Verifică eligibilitatea",
 

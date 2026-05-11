@@ -51,9 +51,9 @@ const TheComplianceLedger = () => {
               </div>
 
               <div className="absolute inset-0 z-10 flex flex-col items-start justify-center text-white text-left px-6 sm:px-10">
-                <p className="text-xs tracking-[2px] uppercase">
+                {/* <p className="text-xs tracking-[2px] uppercase">
                   {t("ledger.concept")} 0{index + 1}
-                </p>
+                </p> */}
 
                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-3 leading-tight">
                   {card.name}

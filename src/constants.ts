@@ -402,7 +402,7 @@ export const ledgerCards_en = [
 export const ledgerCards_ro = [
   {
     id: 1,
-    name: "Diligență Datorată",
+    name: "Due diligence",
     title: `Diligența datorată este procesul pe care companiile trebuie să îl urmeze pentru a se asigura că produsele lor sunt fără defrișare și produse legal. Nu este doar o verificare unică, ci un sistem continuu de colectare a informațiilor, evaluare a riscurilor și reducere a riscurilor.`,
     icon: LedgerDueDiligence,
     bg: "/About/images/plant1.jpg",
@@ -423,9 +423,9 @@ export const ledgerCards_ro = [
     bg: "/About/images/plant2.jpg",
     tagline: "Urmărește produsul până la sursa sa",
     points: [
-      "Conectați fiecare lot de produs la ferma sau parcela de origine",
+      "Conectați fiecare lot de produs la parcela de origine",
       "Documentați fiecare etapă din lanțul de aprovizionare",
-      "Folosiți date la nivel de fermă, nu doar țara de origine",
+      "Folosiți date la parcela de origine, nu doar țara de origine",
       "Permiteți verificarea de către autoritățile competente din UE",
       "Acoperiți întregul lanț de aprovizionare din amonte",
     ],
@@ -433,7 +433,7 @@ export const ledgerCards_ro = [
   {
     id: 3,
     name: "Geolocație",
-    title: `Geolocația este cerința de a furniza coordonatele geografice precise ale fiecărei parcele de teren unde a fost produsă materia primă. Aceste date sunt corelate cu imagini satelitare și hărți ale defrișărilor pentru a confirma conformitatea.`,
+    title: `Geolocația este cerința de a furniza coordonatele geografice precise ale fiecărei parcele de teren unde a fost recoltata materia primă. Aceste date sunt corelate cu imagini satelitare și hărți ale defrișărilor pentru a confirma conformitatea.`,
     icon: LedgerGeoLocation,
     bg: "/About/images/plant3.jpg",
     tagline: "Identifică exact unde au fost cultivate produsele",
@@ -559,7 +559,7 @@ export const implementationTimelineEN = [
   {
     id: 2,
     number: "2",
-    date: "Early 2024",
+    date: "April 2026",
     title: "Preparation Phase",
     description:
       "Companies begin auditing supply chains and mapping farm locations.",
@@ -567,7 +567,7 @@ export const implementationTimelineEN = [
   {
     id: 3,
     number: "3",
-    date: "Late 2024",
+    date: "December 2026",
     title: "Full Enforcement",
     description:
       "Large enterprises must comply with all due diligence requirements.",
@@ -575,7 +575,7 @@ export const implementationTimelineEN = [
   {
     id: 4,
     number: "4",
-    date: "June 2025",
+    date: "June 2027",
     title: "SME Enforcement",
     description:
       "Compliance requirements extend to small and medium enterprises.",
@@ -594,7 +594,7 @@ export const implementationTimelineRO = [
   {
     id: 2,
     number: "2",
-    date: "Începutul anului 2024",
+    date: " Aprile 2026",
     title: "Faza de pregătire",
     description:
       "Companiile încep auditarea lanțurilor de aprovizionare și cartografierea fermelor.",
@@ -602,7 +602,7 @@ export const implementationTimelineRO = [
   {
     id: 3,
     number: "3",
-    date: "Sfârșitul anului 2024",
+    date: "Decembrie 2026",
     title: "Aplicare completă",
     description:
       "Marile companii trebuie să respecte toate cerințele de diligență.",
@@ -610,7 +610,7 @@ export const implementationTimelineRO = [
   {
     id: 4,
     number: "4",
-    date: "Iunie 2025",
+    date: "Iunie 2027",
     title: "Aplicare pentru IMM-uri",
     description:
       "Cerințele de conformitate se extind la întreprinderile mici și mijlocii.",

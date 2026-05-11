@@ -10,11 +10,10 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eudrcompliancehub.com"),
+title: "Consultanță conformitate EUDR și soluții de due diligence | EUDR Compliance Hub",
 
-  title: "EUDR Compliance Consulting & Due Diligence Solutions | EUDR Compliance Hub",
-  description:
-  "Expert EUDR consulting, due diligence, traceability, risk assessment, and compliance solutions for businesses navigating EU Deforestation Regulation requirements.",
-   
+description:
+  "Servicii specializate de consultanță EUDR, due diligence, trasabilitate și soluții de conformitate pentru companii.",
    keywords: [
     "EUDR compliance",
     "EUDR consulting",

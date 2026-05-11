@@ -1,4 +1,4 @@
-import FAQSection from "../components/home/FAQsec";
+// import FAQSection from "../components/home/FAQsec";
 import Hero from "../components/home/Hero";
 import HowItWorks from "../components/home/HowItWorks";
 import ProductsCoveredSec from "../components/home/ProductsCoveredSec";
@@ -30,7 +30,7 @@ export default async function Home() {
       <HowItWorks items={howItWorksSteps} />
       <ReadyToEnsure />
       <RiskIsReal />
-      <FAQSection faqs={faqs} />
+      {/* <FAQSection faqs={faqs} /> */}
     </div>
   );
 }

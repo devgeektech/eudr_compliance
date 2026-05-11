@@ -21,7 +21,7 @@ const PageHeroBanner = ({ titleKey }: PageHeroBannerProps) => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Title */}
-      <h1 className="relative z-10 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold capitalize text-center px-4">
+      <h1 className="relative z-10 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold  text-center px-4">
         {t(titleKey)}
       </h1>
     </section>

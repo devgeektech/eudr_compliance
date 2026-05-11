@@ -20,9 +20,9 @@ const ProductsCoveredSec = ({ items }: Props) => {
         <h2 className="text-center text-white font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           {t("products.title")}
         </h2>
-        <p className="text-center text-white/90 mt-4 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg">
+        {/* <p className="text-center text-white/90 mt-4 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base md:text-lg">
           {t("products.subtitle")}
-        </p>
+        </p> */}
         <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-y-8 gap-x-4 sm:gap-x-6 md:gap-8">
           {items.map((item) => {
             const imageUrl = getStrapiMediaURL(item.image?.url);
