@@ -50,7 +50,7 @@ const Footer = () => {
           <div className="space-y-4 text-white text-sm">
             <div className="flex items-start gap-3">
               <Mail className="text-[#BF9655] mt-0.5" />
-              <span>info@eudrcompliancehub.com</span>
+              <span>contact@eudrcompliance.com</span>
             </div>
             <div className="flex items-start gap-3">
               <Phone className="text-[#BF9655] mt-0.5" />
