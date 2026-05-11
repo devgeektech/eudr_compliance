@@ -354,29 +354,29 @@ export const ledgerCards_en = [
   {
     id: 1,
     name: "Due Diligence",
-    title: `Due diligence is the process companies must follow to ensure their products are deforestation-free and legally produced. It is not just a one-time check it is an ongoing system of information gathering, risk assessment, and risk mitigation.`,
+    title: `Due diligence is the process that companies must follow to ensure that their products are deforestation-free and legally produced. It is not just a one-time check, but a continuous system of information gathering, risk assessment, and risk mitigation.`,
     icon: LedgerDueDiligence,
     bg: "/About/images/plant1.jpg",
-    tagline:"Know before you sell",
+    tagline: "Know before you sell",
     points: [
       "Collect documented evidence from suppliers",
       "Assess the risk level based on country and region",
-      "Take concrete steps to reduce or eliminate identified risks",
+      "Take concrete measures to reduce or eliminate identified risks",
       "Keep records for at least 5 years",
-      "File a due diligence statement before placing goods on the market",
+      "Submit a due diligence statement before placing goods on the market",
     ],
   },
   {
     id: 2,
     name: "Traceability",
-    title: `Traceability means being able to trace a product all the way back to the specific plot of land where it was produced. This allows authorities and companies to verify that the product did not come from recently deforested or degraded land.`,
+    title: `Traceability means the ability to track a product back to the specific plot of land where it was produced. This allows authorities and companies to verify that the product does not come from recently deforested or degraded land.`,
     icon: LedgerTraceability,
     bg: "/About/images/plant2.jpg",
-     tagline:"Follow the product back to its source",
+    tagline: "Follow the product back to its source",
     points: [
-      "Link every batch of product to its farm or origin plot",
-      "Document each step in the supply chain",
-      "Use farm-level data, not just country-of-origin",
+      "Link each product batch to its origin plot",
+      "Document every stage of the supply chain",
+      "Use plot-level data, not only country of origin",
       "Enable verification by EU competent authorities",
       "Cover the entire upstream supply chain",
     ],
@@ -384,10 +384,10 @@ export const ledgerCards_en = [
   {
     id: 3,
     name: "Geolocation",
-    title: `Geolocation is the requirement to provide precise geographic coordinates of every plot of land where the commodity was produced. This data is cross-referenced with satellite imagery and deforestation maps to confirm compliance.`,
+    title: `Geolocation is the requirement to provide the precise geographic coordinates of each plot of land where the raw material was harvested. This data is cross-checked with satellite imagery and deforestation maps to confirm compliance.`,
     icon: LedgerGeoLocation,
     bg: "/About/images/plant3.jpg",
-     tagline:"Pinpoint exactly where goods were grown",
+    tagline: "Pinpoint exactly where goods were grown",
     points: [
       "Provide GPS coordinates (latitude and longitude)",
       "Cover all plots larger than 4 hectares",
@@ -397,13 +397,13 @@ export const ledgerCards_en = [
     ],
   },
 ];
-
 // ROMANIAN
 export const ledgerCards_ro = [
   {
     id: 1,
     name: "Due diligence",
-    title: `Diligența datorată este procesul pe care companiile trebuie să îl urmeze pentru a se asigura că produsele lor sunt fără defrișare și produse legal. Nu este doar o verificare unică, ci un sistem continuu de colectare a informațiilor, evaluare a riscurilor și reducere a riscurilor.`,
+    title: `Due diligence is the process that companies must follow to ensure that their products are deforestation-free and legally produced. It is not just a one-time check, but a continuous system of information gathering, risk assessment, and risk mitigation.
+`,
     icon: LedgerDueDiligence,
     bg: "/About/images/plant1.jpg",
     tagline: "Cunoaște înainte să vinzi",
