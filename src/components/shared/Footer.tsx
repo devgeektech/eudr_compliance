@@ -46,43 +46,61 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-semibold mb-5">{t("footer.contact")}</h3>
-          <div className="space-y-4 text-white text-sm">
-            <div className="flex items-start gap-3">
-              <Mail className="text-[#BF9655] mt-0.5" />
-              <span>contact@eudrcompliance.com</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <Phone className="text-[#BF9655] mt-0.5" />
-              <span>+40 752 212 832</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <Location className="text-[#BF9655] mt-0.5" />
-              <span>Orăștie, Hunedoara, Romania</span>
-            </div>
-          </div>
-        </div>
+  <h3 className="text-lg font-semibold mb-5">
+    {t("footer.contact")}
+  </h3>
+
+  <div className="space-y-4 text-white text-sm">
+    
+    <div className="flex items-start gap-3">
+      <Mail className="text-[#BF9655] mt-0.5 shrink-0" />
+      <span className="break-words">contact@eudrcompliance.com</span>
+    </div>
+
+    <div className="flex items-start gap-3">
+      <Phone className="text-[#BF9655] mt-0.5 shrink-0" />
+      <span>+40 752 212 832</span>
+    </div>
+
+    <div className="flex items-start gap-3">
+      <Location className="text-[#BF9655] mt-0.5 shrink-0" />
+      <span>Orăștie, Hunedoara, Romania</span>
+    </div>
+  </div>
+
+  {/* LinkedIn */}
+ <div className="mt-6 flex justify-center">
+  <a
+    href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center rounded-full hover:opacity-80 transition"
+  >
+    <LinkedIn className="text-[#BF9655]" />
+  </a>
+</div>
+</div>
 
       </div>
 
       {/* Bottom */}
    <div className="border-t border-white/10 mt-12 pt-6">
-  <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white">
+  <div className="w-full mx-auto flex  sm:flex-row items-center justify-center  text-sm text-white">
     
     {/* Left */}
-    <p className="text-center sm:text-left">
+    <p className="text-center">
       {t("footer.copyright")}
     </p>
 
     {/* Right */}
-    <a
+    {/* <a
       href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="hover:opacity-80 transition"
     >
       <LinkedIn className="text-[#BF9655]" />
-    </a>
+    </a> */}
 
   </div>
 </div>
