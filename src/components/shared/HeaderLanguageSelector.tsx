@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   HeaderRightFlag1,
@@ -37,6 +37,12 @@ const HeaderLanguageSelector = () => {
     readLocaleFromBrowser()
   );
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+  if (!document.cookie.includes(LANGUAGE_COOKIE)) {
+    persistLocale("ro");
+  }
+}, []);
 
   const selectLocale = (next: AppLocale) => {
     if (next === locale) {

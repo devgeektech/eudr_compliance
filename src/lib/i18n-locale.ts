@@ -13,9 +13,9 @@ export function localeFromCookieValue(value: string | undefined): AppLocale {
 }
 
 export function localeFromDocumentCookie(): AppLocale {
-  if (typeof document === "undefined") return "en";
+  if (typeof document === "undefined") return "ro";
   const match = document.cookie.match(
     new RegExp(`(?:^|;\\s*)${LANGUAGE_COOKIE}=([^;]*)`),
   );
-  return localeFromCookieValue(match?.[1]?.trim());
+  return localeFromCookieValue(match?.[1]?.trim()||"ro");
 }

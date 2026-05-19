@@ -51,9 +51,9 @@ const CompaniesMustDo = ({ items }: Props) => {
 
   {/* Bottom (Text) */}
   <div>
-    <h3 className="text-white text-xl font-semibold mb-2">
-      {item.title}
-    </h3>
+    <h3 className="text-white text-lg lg:text-xl font-semibold mb-2 leading-tight">
+  {item.title}
+</h3>
     <p className="text-white/90 text-sm leading-6">
       {item.description}
     </p>
