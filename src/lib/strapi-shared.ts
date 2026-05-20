@@ -22,14 +22,10 @@ export async function strapiFetch<T>(
   try {
     console.log("STRAPI_URL", STRAPI_URL);
     console.log(`Fetching from Strapi: ${STRAPI_URL}/api${path}`);
-
-    const res = await fetch(`${STRAPI_URL}/api${path}`, {
-      cache: options?.noCache ? "no-store" : "force-cache",
-      next: options?.noCache
-        ? undefined
-        : { revalidate: options?.revalidate ?? 60 },
-      signal: controller.signal,
-    });
+const res = await fetch(`${STRAPI_URL}/api${path}`, {
+  cache: "no-store",
+  signal: controller.signal,
+});
 
     clearTimeout(timeout);
 
@@ -55,22 +51,21 @@ export async function strapiFetch<T>(
   }
 }
 async function postAPI<T>(endpoint: string, body: unknown): Promise<T> {
-  try {
-    const res = await fetch(`${STRAPI_URL}/api${endpoint}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
+  const res = await fetch(`${STRAPI_URL}/api${endpoint}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
 
-    if (!res.ok) throw new Error(`API Error: ${res.status}`);
+    cache: "no-store", // always fresh
+  });
 
-    return await res.json();
-  } catch (error) {
-    console.error("POST API Error:", error);
-    throw error;
+  if (!res.ok) {
+    throw new Error(`API Error: ${res.status}`);
   }
+
+  return res.json();
 }
 
 // ─── Types ───────────────────────────────────────────────────────────────────

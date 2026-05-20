@@ -401,8 +401,8 @@ export const ledgerCards_en = [
 export const ledgerCards_ro = [
   {
     id: 1,
-    name: "Due diligence",
-    title: `Due diligence is the process that companies must follow to ensure that their products are deforestation-free and legally produced. It is not just a one-time check, but a continuous system of information gathering, risk assessment, and risk mitigation.
+    name: "Due diligence",
+    title: `Due diligence este un sistem obligatoriu de verificare prin care o companie garantează că produsele sale nu au legătură cu defrișările și respectă legile țării de origine. Acesta nu este un simplu act sau o bifă pe o listă, ci un proces continuu.
 `,
     icon: LedgerDueDiligence,
     bg: "/About/images/plant1.jpg",
@@ -848,46 +848,46 @@ export const whatWeOfferCards = [
 
 //EXPLORE BY INDUSTRY
 
-import {
-  WoodFurniture as WoodFurnitureIndustry,
-  ImportExport,
-  CoffeeCocoa,
-  Traders as TradersIndustry,
-  Manufacturers as ManufacturersIndustry,
-} from "@/public/Industry/images/svgs";
+// import {
+//   WoodFurniture as WoodFurnitureIndustry,
+//   ImportExport,
+//   CoffeeCocoa,
+//   Traders as TradersIndustry,
+//   Manufacturers as ManufacturersIndustry,
+// } from "@/public/Industry/images/svgs";
 
-export const exploreByIndustryCards = [
-  {
-    id: 1,
-    icon: WoodFurnitureIndustry,
-    title: "Wood & Furniture",
-    text: "Timber sourcing & Traceability",
-  },
-  {
-    id: 2,
-    icon: ImportExport,
-    title: "Import & Export",
-    text: "Cross-border Compliance",
-  },
-  {
-    id: 3,
-    icon: CoffeeCocoa,
-    title: "Coffee & Cocoa",
-    text: "Agricultural Supply Chains",
-  },
-  {
-    id: 4,
-    icon: TradersIndustry,
-    title: "Traders",
-    text: "Supply Chain Responsibility",
-  },
-  {
-    id: 5,
-    icon: ManufacturersIndustry,
-    title: "Manufacturers",
-    text: "Production & Due Diligence",
-  },
-] as const;
+// export const exploreByIndustryCards = [
+//   {
+//     id: 1,
+//     icon: WoodFurnitureIndustry,
+//     title: "Wood & Furniture",
+//     text: "Timber sourcing & Traceability",
+//   },
+//   {
+//     id: 2,
+//     icon: ImportExport,
+//     title: "Import & Export",
+//     text: "Cross-border Compliance",
+//   },
+//   {
+//     id: 3,
+//     icon: CoffeeCocoa,
+//     title: "Coffee & Cocoa",
+//     text: "Agricultural Supply Chains",
+//   },
+//   {
+//     id: 4,
+//     icon: TradersIndustry,
+//     title: "Traders",
+//     text: "Supply Chain Responsibility",
+//   },
+//   {
+//     id: 5,
+//     icon: ManufacturersIndustry,
+//     title: "Manufacturers",
+//     text: "Production & Due Diligence",
+//   },
+// ] as const;
 
 // Contact page cards data
 

@@ -2,6 +2,7 @@ export const LOCALE_CHANGED_EVENT = "app:locale-changed";
 
 export const LANGUAGE_COOKIE = "language";
 export type AppLocale = "en" | "ro";
+export const DEFAULT_LOCALE: AppLocale = "ro";
 
 export function appendLocaleQuery(endpoint: string, locale: AppLocale): string {
   if (locale !== "ro") return endpoint;
@@ -9,13 +10,15 @@ export function appendLocaleQuery(endpoint: string, locale: AppLocale): string {
 }
 
 export function localeFromCookieValue(value: string | undefined): AppLocale {
-  return value === "ro" ? "ro" : "en";
+  if (value === "en") return "en";
+  if (value === "ro") return "ro";
+  return DEFAULT_LOCALE;
 }
 
 export function localeFromDocumentCookie(): AppLocale {
-  if (typeof document === "undefined") return "ro";
+  if (typeof document === "undefined") return DEFAULT_LOCALE;
   const match = document.cookie.match(
     new RegExp(`(?:^|;\\s*)${LANGUAGE_COOKIE}=([^;]*)`),
   );
-  return localeFromCookieValue(match?.[1]?.trim()||"ro");
+  return localeFromCookieValue(match?.[1]?.trim());
 }

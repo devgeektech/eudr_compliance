@@ -1,0 +1,9 @@
+Problem:
+When the language cookie was missing, the static translation hook showed Romanian because it passed "ro" as a fallback. Server-side Strapi requests used localeFromCookieValue() directly with an undefined cookie value, and that helper returned English for anything except "ro".
+
+That meant a fresh page load with no cookie rendered Romanian static text but fetched English Strapi content.
+
+Fix:
+Added DEFAULT_LOCALE = "ro" in src/lib/i18n-locale.ts and changed localeFromCookieValue() so missing or invalid cookie values resolve to Romanian. Explicit "en" still resolves to English, and explicit "ro" still resolves to Romanian.
+
+Also changed the initial html lang attribute in src/app/layout.tsx from "en" to "ro" so the first rendered document matches the default language.
