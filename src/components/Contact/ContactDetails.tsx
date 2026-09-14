@@ -7,7 +7,7 @@ const ContactDetails = () => {
   const { t } = useTranslation();
 
   const contactData = [
-    { icon: EmailUs, labelKey: "contactDetails.email", value: "contact@eudrcompliance.com" },
+    { icon: EmailUs, labelKey: "contactDetails.email", value: "contact@eudrcompliancehub.com" },
     { icon: CallUs, labelKey: "contactDetails.phone", value: "+40 752 212 832" },
     { icon: Location, labelKey: "contactDetails.address", value: "Orăștie, Hunedoara, Romania" },
     { icon: BusinessHours, labelKey: "contactDetails.hours", value: "Mon - Fri: 9:00 AM - 6:00 PM" },

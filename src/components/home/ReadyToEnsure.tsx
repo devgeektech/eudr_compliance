@@ -22,7 +22,7 @@ const ReadyToEnsure = () => {
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
          <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@eudrcompliance.com&su=EUDR%20Consultation%20Request"
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@eudrcompliancehub.com&su=EUDR%20Consultation%20Request"
   target="_blank"
   rel="noopener noreferrer"
   className="px-6 py-3 rounded-lg bg-[#BF9655] text-white font-medium hover:opacity-90 transition inline-flex items-center justify-center"
