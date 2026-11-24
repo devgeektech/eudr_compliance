@@ -5,49 +5,42 @@ import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Footer from "../components/shared/Footer";
 import CookieBanner from "../components/shared/CookieBanner";
+import { SiteJsonLd } from "@/src/lib/seo/json-ld";
+import {
+  DEFAULT_OG_IMAGE,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_WIDTH,
+  SITE_NAME,
+  SITE_URL,
+} from "@/src/lib/seo/constants";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://eudrcompliancehub.com"),
-title: "Consultanță conformitate EUDR și soluții de due diligence | EUDR Compliance Hub",
-
-description:
-  "Servicii specializate de consultanță EUDR, due diligence, trasabilitate și soluții de conformitate pentru companii.",
-   keywords: [
-    "EUDR compliance",
-    "EUDR consulting",
-    "EUDR consultant",
-    "EUDR due diligence",
-    "EUDR traceability",
-    "EUDR risk assessment",
-    "EU deforestation regulation",
-    "EUDR services",
-    "EUDR compliance solutions",
-    "EUDR România",
-    "legislație EUDR România",
-  ],
-  openGraph: {
-    title: "EUDR Compliance Consulting & Due Diligence Solutions | EUDR Compliance Hub",
-    description: "Expert EUDR consulting and compliance solutions for businesses navigating EU Deforestation Regulation requirements.",
-    url: "https://eudrcompliancehub.com",
-    siteName: "EUDR Compliance Hub",
-    
-    images: [
-      {
-        url: "/eudrLogo.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    type: "website",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s`,
   },
-   icons: {
+  icons: {
     icon: "/faviconV2.png",
   },
-
+  openGraph: {
+    siteName: SITE_NAME,
+    locale: "ro_RO",
+    type: "website",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
+        alt: SITE_NAME,
+      },
+    ],
+  },
   twitter: {
     card: "summary_large_image",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -59,10 +52,11 @@ export default function RootLayout({
   return (
     <html lang="ro" className={cn("h-full antialiased", "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col bg-white">
+        <SiteJsonLd />
         <Header />
         <main className="flex-1">{children}</main>
-        {<CookieBanner/>}
-        <Footer/>
+        {<CookieBanner />}
+        <Footer />
       </body>
     </html>
   );

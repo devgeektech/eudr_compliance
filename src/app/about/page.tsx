@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { buildPageMetadataFromCopy } from "@/src/lib/seo/ro-metadata";
+import { PAGE_SEO_COPY } from "@/src/lib/seo/page-seo-copy";
 import CompaniesMustDo from "@/src/components/About/CompaniesMustDo";
 import EmpoweringSustainability from "@/src/components/About/EmpoweringSustainability";
 import GethelpwithEUDRcompliance from "@/src/components/About/GethelpwithEUDRcompliance";
@@ -14,6 +17,11 @@ import {
   getCompaniesMustDoCards,
   getProductsCovered,
 } from "@/src/lib/strapi-server";
+
+export function generateMetadata(): Metadata {
+  const seo = PAGE_SEO_COPY["/about"];
+  return buildPageMetadataFromCopy("/about", seo.title, seo.description);
+}
 
 export default async function AboutPage() {
   const [stats, features, sustainabilityCards, companiesMustDoCards, productsCovered] =

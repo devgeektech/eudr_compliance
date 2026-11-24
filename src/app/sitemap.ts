@@ -1,17 +1,22 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/src/lib/seo/constants";
+
+const PUBLIC_PATHS = [
+  "",
+  "/about",
+  "/services",
+  "/industry",
+  "/faq",
+  "/contact",
+  "/privacy-policy",
+  "/terms-and-services",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    "",
-    "/contact",
-    "/services",
-    "/about",
-    "/industry",
-    "/faq",
-  ];
+  const lastModified = new Date();
 
-  return routes.map((route) => ({
-    url: `https://eudrcompliancehub.com${route}`,
-    lastModified: new Date(),
+  return PUBLIC_PATHS.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
   }));
 }

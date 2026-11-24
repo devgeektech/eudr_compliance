@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { buildPageMetadataFromCopy } from "@/src/lib/seo/ro-metadata";
+import { PAGE_SEO_COPY } from "@/src/lib/seo/page-seo-copy";
 // import FAQSection from "../components/home/FAQsec";
 import Hero from "../components/home/Hero";
 import HowItWorks from "../components/home/HowItWorks";
@@ -12,6 +15,11 @@ import {
   getHowItWorksSteps,
   getFaqs,
 } from "@/src/lib/strapi-server";
+
+export function generateMetadata(): Metadata {
+  const seo = PAGE_SEO_COPY["/"];
+  return buildPageMetadataFromCopy("/", seo.title, seo.description);
+}
 
 export default async function Home() {
   const [productsCovered, whatWeDoCards, howItWorksSteps, faqs] = await Promise.all([
